@@ -1,0 +1,49 @@
+kquery = { array-declaration | query-command }
+array-declaration = "array" name "[" [ size ] "]" ":" domain "->" range "="
+array-initializer  
+array-initializer = "symbolic" | "[" number-list "]"  
+number-list = number | number "," number-list 
+query-command = "(" "query" constraint-list query-expression [ eval-expr-list
+[ eval-array-list ] ] ")"  
+query-expression = expression  
+constraint-list = "[" { expression } "]"  
+eval-expr-list = "[" { expression } "]"  
+eval-array-list = "[" { identifier } "]"  
+version = identifier | "[" [ update-list ] "]" "@" version
+update-list = lhs-expression "=" rhs-expression [ "," update-list ]
+expression = identifier
+expression = identifier ":" expression  
+expression = number | "(" type number ")"
+arithmetic-expr-kind = ( "Add" | "Sub" | "Mul" | "UDiv" | "URem" | "SDiv" |
+"SRem" )  
+expression = "(" arithmetic-expr-kind type expression expression ")"  
+expression = "(" "Not" [ type ] expression ")"
+bitwise-expr-kind = ( "And" | "Or" | "Xor" | "Shl" | "LShr" | "AShr" )  
+expression = "(" bitwise-expr-kind type expression expression ")" 
+expression = "(" "Shl" type X Y ")"
+expression = "(" "LShr" type X Y ")"
+expression = "(" "AShr" type X Y ")"
+comparison-expr-kind = ( "Eq" | "Ne" | "Ult" | "Ule" | "Ugt" | "Uge" | "Slt" |
+"Sle" | "Sgt" | "Sge" )  
+expression = "(" comparison-expr-kind [ type ] expression expression ")"  
+expression = "(" "Concat" [type] msb-expression lsb-expression ")"
+expression = "(" "Extract" type offset-number child-expression ")"
+expression = "(" "ZExt" type child-expression ")"
+expression = "(" "SExt" type input-expression ")"
+expression = "(" "Read" type index-expression version ")"  
+expression = "(" "Select" type cond-expression true-expression false-
+expression ")"  
+expression = "(" "Neg" [ type ] expression ")"
+expression = "(" "ReadLSB" type index-expression version ")"  
+expression = "(" "ReadMSB" type index-expression version ")"  
+identifier = "[a-zA-Z_][a-zA-Z0-9._]*"  
+floating-point-type = "fp[0-9]+([.].*)?"  
+integer-type = "i[0-9]+"  
+number = "true" | "false" | signed-constant  
+signed-constant = [ "+" | "-" ] ( dec-constant | bin-constant | oct-constant |
+hex-constant )  
+dec-constant = "[0-9_]+"  
+bin-constant = "0b[01_]+"  
+oct-constant = "0o[0-7_]+"  
+hex-constant = "0x[0-9a-fA-F_]+"  
+type = "w[0-9]+"  
