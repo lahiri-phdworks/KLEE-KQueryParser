@@ -71,6 +71,15 @@ class KQueryListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by KQueryParser#arrayElemsStub.
+    def enterArrayElemsStub(self, ctx:KQueryParser.ArrayElemsStubContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#arrayElemsStub.
+    def exitArrayElemsStub(self, ctx:KQueryParser.ArrayElemsStubContext):
+        pass
+
+
     # Enter a parse tree produced by KQueryParser#arrayInitializer.
     def enterArrayInitializer(self, ctx:KQueryParser.ArrayInitializerContext):
         pass
@@ -86,6 +95,42 @@ class KQueryListener(ParseTreeListener):
 
     # Exit a parse tree produced by KQueryParser#expression.
     def exitExpression(self, ctx:KQueryParser.ExpressionContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#version.
+    def enterVersion(self, ctx:KQueryParser.VersionContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#version.
+    def exitVersion(self, ctx:KQueryParser.VersionContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#varName.
+    def enterVarName(self, ctx:KQueryParser.VarNameContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#varName.
+    def exitVarName(self, ctx:KQueryParser.VarNameContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#namedConstant.
+    def enterNamedConstant(self, ctx:KQueryParser.NamedConstantContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#namedConstant.
+    def exitNamedConstant(self, ctx:KQueryParser.NamedConstantContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#updateList.
+    def enterUpdateList(self, ctx:KQueryParser.UpdateListContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#updateList.
+    def exitUpdateList(self, ctx:KQueryParser.UpdateListContext):
         pass
 
 
@@ -158,42 +203,6 @@ class KQueryListener(ParseTreeListener):
 
     # Exit a parse tree produced by KQueryParser#number.
     def exitNumber(self, ctx:KQueryParser.NumberContext):
-        pass
-
-
-    # Enter a parse tree produced by KQueryParser#floatingPointwidthType.
-    def enterFloatingPointwidthType(self, ctx:KQueryParser.FloatingPointwidthTypeContext):
-        pass
-
-    # Exit a parse tree produced by KQueryParser#floatingPointwidthType.
-    def exitFloatingPointwidthType(self, ctx:KQueryParser.FloatingPointwidthTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by KQueryParser#integerwidthType.
-    def enterIntegerwidthType(self, ctx:KQueryParser.IntegerwidthTypeContext):
-        pass
-
-    # Exit a parse tree produced by KQueryParser#integerwidthType.
-    def exitIntegerwidthType(self, ctx:KQueryParser.IntegerwidthTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by KQueryParser#version.
-    def enterVersion(self, ctx:KQueryParser.VersionContext):
-        pass
-
-    # Exit a parse tree produced by KQueryParser#version.
-    def exitVersion(self, ctx:KQueryParser.VersionContext):
-        pass
-
-
-    # Enter a parse tree produced by KQueryParser#updateList.
-    def enterUpdateList(self, ctx:KQueryParser.UpdateListContext):
-        pass
-
-    # Exit a parse tree produced by KQueryParser#updateList.
-    def exitUpdateList(self, ctx:KQueryParser.UpdateListContext):
         pass
 
 

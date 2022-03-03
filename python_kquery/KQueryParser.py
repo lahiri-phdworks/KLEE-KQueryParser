@@ -11,128 +11,146 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3G")
-        buf.write("\u0127\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3K")
+        buf.write("\u0147\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
-        buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\3\2\7\2.\n\2\f\2\16\2\61")
-        buf.write("\13\2\3\2\3\2\3\3\3\3\5\3\67\n\3\3\4\3\4\3\4\3\4\3\4\3")
-        buf.write("\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5H\n\5\3\6\3")
-        buf.write("\6\3\6\3\6\3\6\3\6\3\6\5\6Q\n\6\3\7\3\7\3\7\3\7\3\7\3")
-        buf.write("\7\5\7Y\n\7\3\b\3\b\3\b\3\b\7\b_\n\b\f\b\16\bb\13\b\3")
-        buf.write("\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\5\t")
-        buf.write("q\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3")
-        buf.write("\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3")
-        buf.write("\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3")
-        buf.write("\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3")
-        buf.write("\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\5\n\u00ec\n\n\3\13\3\13\3\f\3\f\3\r\3\r\3\16\3\16")
-        buf.write("\3\17\3\17\3\20\3\20\3\21\3\21\3\21\3\21\3\21\5\21\u00ff")
-        buf.write("\n\21\3\22\3\22\3\23\3\23\6\23\u0105\n\23\r\23\16\23\u0106")
-        buf.write("\3\23\3\23\7\23\u010b\n\23\f\23\16\23\u010e\13\23\5\23")
-        buf.write("\u0110\n\23\3\24\3\24\6\24\u0114\n\24\r\24\16\24\u0115")
-        buf.write("\3\25\3\25\3\25\3\25\3\25\3\25\3\25\5\25\u011f\n\25\3")
-        buf.write("\26\3\26\3\26\3\26\3\26\3\26\3\26\3\u010c\2\27\2\4\6\b")
-        buf.write("\n\f\16\20\22\24\26\30\32\34\36 \"$&(*\2\6\4\2\27\31(")
-        buf.write("*\3\2+\64\3\2\65;\4\2\3\4\r\16\2\u0135\2/\3\2\2\2\4\66")
-        buf.write("\3\2\2\2\68\3\2\2\2\bG\3\2\2\2\nP\3\2\2\2\fX\3\2\2\2\16")
-        buf.write("Z\3\2\2\2\20p\3\2\2\2\22\u00eb\3\2\2\2\24\u00ed\3\2\2")
-        buf.write("\2\26\u00ef\3\2\2\2\30\u00f1\3\2\2\2\32\u00f3\3\2\2\2")
-        buf.write("\34\u00f5\3\2\2\2\36\u00f7\3\2\2\2 \u00fe\3\2\2\2\"\u0100")
-        buf.write("\3\2\2\2$\u0102\3\2\2\2&\u0111\3\2\2\2(\u011e\3\2\2\2")
-        buf.write("*\u0120\3\2\2\2,.\5\4\3\2-,\3\2\2\2.\61\3\2\2\2/-\3\2")
-        buf.write("\2\2/\60\3\2\2\2\60\62\3\2\2\2\61/\3\2\2\2\62\63\7\2\2")
-        buf.write("\3\63\3\3\2\2\2\64\67\5\16\b\2\65\67\5\6\4\2\66\64\3\2")
-        buf.write("\2\2\66\65\3\2\2\2\67\5\3\2\2\289\7B\2\29:\7\17\2\2:;")
-        buf.write("\5\n\6\2;<\5\b\5\2<=\7C\2\2=\7\3\2\2\2>H\5\22\n\2?@\5")
-        buf.write("\22\n\2@A\5\n\6\2AH\3\2\2\2BC\5\22\n\2CD\5\n\6\2DE\5\f")
-        buf.write("\7\2EH\3\2\2\2FH\3\2\2\2G>\3\2\2\2G?\3\2\2\2GB\3\2\2\2")
-        buf.write("GF\3\2\2\2H\t\3\2\2\2IJ\7D\2\2JK\5\22\n\2KL\7E\2\2LQ\3")
-        buf.write("\2\2\2MN\7D\2\2NQ\7E\2\2OQ\3\2\2\2PI\3\2\2\2PM\3\2\2\2")
-        buf.write("PO\3\2\2\2Q\13\3\2\2\2RS\7D\2\2ST\7<\2\2TY\7E\2\2UV\7")
-        buf.write("D\2\2VY\7E\2\2WY\3\2\2\2XR\3\2\2\2XU\3\2\2\2XW\3\2\2\2")
-        buf.write("Y\r\3\2\2\2Z[\7\20\2\2[\\\5\36\20\2\\`\7D\2\2]_\7=\2\2")
-        buf.write("^]\3\2\2\2_b\3\2\2\2`^\3\2\2\2`a\3\2\2\2ac\3\2\2\2b`\3")
-        buf.write("\2\2\2cd\7E\2\2de\7\22\2\2ef\5\32\16\2fg\7\23\2\2gh\5")
-        buf.write("\34\17\2hi\7\24\2\2ij\5\20\t\2j\17\3\2\2\2kq\7\21\2\2")
-        buf.write("lm\7D\2\2mn\5 \21\2no\7E\2\2oq\3\2\2\2pk\3\2\2\2pl\3\2")
-        buf.write("\2\2q\21\3\2\2\2r\u00ec\7<\2\2st\7<\2\2tu\7\22\2\2u\u00ec")
-        buf.write("\5\22\n\2vw\7B\2\2wx\7\t\2\2xy\5\"\22\2yz\7C\2\2z\u00ec")
-        buf.write("\3\2\2\2{|\7B\2\2|}\5\30\r\2}~\7\t\2\2~\177\5\22\n\2\177")
-        buf.write("\u0080\5\22\n\2\u0080\u0081\7C\2\2\u0081\u00ec\3\2\2\2")
-        buf.write("\u0082\u0083\7B\2\2\u0083\u0084\7\26\2\2\u0084\u0085\7")
-        buf.write("D\2\2\u0085\u0086\7\t\2\2\u0086\u0087\7E\2\2\u0087\u0088")
-        buf.write("\5\22\n\2\u0088\u0089\7C\2\2\u0089\u00ec\3\2\2\2\u008a")
-        buf.write("\u008b\7B\2\2\u008b\u008c\5\24\13\2\u008c\u008d\7\t\2")
-        buf.write("\2\u008d\u008e\5\22\n\2\u008e\u008f\5\22\n\2\u008f\u0090")
-        buf.write("\7C\2\2\u0090\u00ec\3\2\2\2\u0091\u0092\7B\2\2\u0092\u0093")
-        buf.write("\7\27\2\2\u0093\u0094\7\t\2\2\u0094\u0095\5\22\n\2\u0095")
-        buf.write("\u0096\5\22\n\2\u0096\u0097\7C\2\2\u0097\u00ec\3\2\2\2")
-        buf.write("\u0098\u0099\7B\2\2\u0099\u009a\7\30\2\2\u009a\u009b\7")
-        buf.write("\t\2\2\u009b\u009c\5\22\n\2\u009c\u009d\5\22\n\2\u009d")
-        buf.write("\u009e\7C\2\2\u009e\u00ec\3\2\2\2\u009f\u00a0\7B\2\2\u00a0")
-        buf.write("\u00a1\7\31\2\2\u00a1\u00a2\7\t\2\2\u00a2\u00a3\5\22\n")
-        buf.write("\2\u00a3\u00a4\5\22\n\2\u00a4\u00a5\7C\2\2\u00a5\u00ec")
-        buf.write("\3\2\2\2\u00a6\u00a7\7B\2\2\u00a7\u00a8\5\26\f\2\u00a8")
-        buf.write("\u00a9\7\t\2\2\u00a9\u00aa\5\22\n\2\u00aa\u00ab\5\22\n")
-        buf.write("\2\u00ab\u00ac\7C\2\2\u00ac\u00ec\3\2\2\2\u00ad\u00ae")
-        buf.write("\7B\2\2\u00ae\u00af\7\32\2\2\u00af\u00b0\7\t\2\2\u00b0")
-        buf.write("\u00b1\5\22\n\2\u00b1\u00b2\5\22\n\2\u00b2\u00b3\7C\2")
-        buf.write("\2\u00b3\u00ec\3\2\2\2\u00b4\u00b5\7B\2\2\u00b5\u00b6")
-        buf.write("\7\33\2\2\u00b6\u00b7\7\t\2\2\u00b7\u00b8\5\"\22\2\u00b8")
-        buf.write("\u00b9\5\22\n\2\u00b9\u00ba\7C\2\2\u00ba\u00ec\3\2\2\2")
-        buf.write("\u00bb\u00bc\7B\2\2\u00bc\u00bd\7\34\2\2\u00bd\u00be\7")
-        buf.write("\t\2\2\u00be\u00bf\5\22\n\2\u00bf\u00c0\7C\2\2\u00c0\u00ec")
-        buf.write("\3\2\2\2\u00c1\u00c2\7B\2\2\u00c2\u00c3\7\35\2\2\u00c3")
-        buf.write("\u00c4\7\t\2\2\u00c4\u00c5\5\22\n\2\u00c5\u00c6\7C\2\2")
-        buf.write("\u00c6\u00ec\3\2\2\2\u00c7\u00c8\7B\2\2\u00c8\u00c9\7")
-        buf.write("\36\2\2\u00c9\u00ca\7\t\2\2\u00ca\u00cb\5\22\n\2\u00cb")
-        buf.write("\u00cc\5(\25\2\u00cc\u00cd\7C\2\2\u00cd\u00ec\3\2\2\2")
-        buf.write("\u00ce\u00cf\7B\2\2\u00cf\u00d0\7\37\2\2\u00d0\u00d1\7")
-        buf.write("\t\2\2\u00d1\u00d2\5\22\n\2\u00d2\u00d3\5\22\n\2\u00d3")
-        buf.write("\u00d4\5\22\n\2\u00d4\u00d5\7C\2\2\u00d5\u00ec\3\2\2\2")
-        buf.write("\u00d6\u00d7\7B\2\2\u00d7\u00d8\7 \2\2\u00d8\u00d9\7\t")
-        buf.write("\2\2\u00d9\u00da\5\22\n\2\u00da\u00db\7C\2\2\u00db\u00ec")
-        buf.write("\3\2\2\2\u00dc\u00dd\7B\2\2\u00dd\u00de\7!\2\2\u00de\u00df")
-        buf.write("\7\t\2\2\u00df\u00e0\5\22\n\2\u00e0\u00e1\5(\25\2\u00e1")
-        buf.write("\u00e2\7C\2\2\u00e2\u00ec\3\2\2\2\u00e3\u00e4\7B\2\2\u00e4")
-        buf.write("\u00e5\7\"\2\2\u00e5\u00e6\7\t\2\2\u00e6\u00e7\5\22\n")
-        buf.write("\2\u00e7\u00e8\5(\25\2\u00e8\u00e9\7C\2\2\u00e9\u00ec")
-        buf.write("\3\2\2\2\u00ea\u00ec\5\"\22\2\u00ebr\3\2\2\2\u00ebs\3")
-        buf.write("\2\2\2\u00ebv\3\2\2\2\u00eb{\3\2\2\2\u00eb\u0082\3\2\2")
-        buf.write("\2\u00eb\u008a\3\2\2\2\u00eb\u0091\3\2\2\2\u00eb\u0098")
-        buf.write("\3\2\2\2\u00eb\u009f\3\2\2\2\u00eb\u00a6\3\2\2\2\u00eb")
-        buf.write("\u00ad\3\2\2\2\u00eb\u00b4\3\2\2\2\u00eb\u00bb\3\2\2\2")
-        buf.write("\u00eb\u00c1\3\2\2\2\u00eb\u00c7\3\2\2\2\u00eb\u00ce\3")
-        buf.write("\2\2\2\u00eb\u00d6\3\2\2\2\u00eb\u00dc\3\2\2\2\u00eb\u00e3")
-        buf.write("\3\2\2\2\u00eb\u00ea\3\2\2\2\u00ec\23\3\2\2\2\u00ed\u00ee")
-        buf.write("\t\2\2\2\u00ee\25\3\2\2\2\u00ef\u00f0\t\3\2\2\u00f0\27")
-        buf.write("\3\2\2\2\u00f1\u00f2\t\4\2\2\u00f2\31\3\2\2\2\u00f3\u00f4")
-        buf.write("\7\t\2\2\u00f4\33\3\2\2\2\u00f5\u00f6\7\t\2\2\u00f6\35")
-        buf.write("\3\2\2\2\u00f7\u00f8\7<\2\2\u00f8\37\3\2\2\2\u00f9\u00ff")
-        buf.write("\5\"\22\2\u00fa\u00fb\5\"\22\2\u00fb\u00fc\7\25\2\2\u00fc")
-        buf.write("\u00fd\5 \21\2\u00fd\u00ff\3\2\2\2\u00fe\u00f9\3\2\2\2")
-        buf.write("\u00fe\u00fa\3\2\2\2\u00ff!\3\2\2\2\u0100\u0101\t\5\2")
-        buf.write("\2\u0101#\3\2\2\2\u0102\u0104\7\'\2\2\u0103\u0105\7=\2")
-        buf.write("\2\u0104\u0103\3\2\2\2\u0105\u0106\3\2\2\2\u0106\u0104")
-        buf.write("\3\2\2\2\u0106\u0107\3\2\2\2\u0107\u010f\3\2\2\2\u0108")
-        buf.write("\u010c\13\2\2\2\u0109\u010b\13\2\2\2\u010a\u0109\3\2\2")
-        buf.write("\2\u010b\u010e\3\2\2\2\u010c\u010d\3\2\2\2\u010c\u010a")
-        buf.write("\3\2\2\2\u010d\u0110\3\2\2\2\u010e\u010c\3\2\2\2\u010f")
-        buf.write("\u0108\3\2\2\2\u010f\u0110\3\2\2\2\u0110%\3\2\2\2\u0111")
-        buf.write("\u0113\7%\2\2\u0112\u0114\7=\2\2\u0113\u0112\3\2\2\2\u0114")
-        buf.write("\u0115\3\2\2\2\u0115\u0113\3\2\2\2\u0115\u0116\3\2\2\2")
-        buf.write("\u0116\'\3\2\2\2\u0117\u011f\7<\2\2\u0118\u0119\7D\2\2")
-        buf.write("\u0119\u011a\5*\26\2\u011a\u011b\7E\2\2\u011b\u011c\7")
-        buf.write("&\2\2\u011c\u011d\5(\25\2\u011d\u011f\3\2\2\2\u011e\u0117")
-        buf.write("\3\2\2\2\u011e\u0118\3\2\2\2\u011f)\3\2\2\2\u0120\u0121")
-        buf.write("\5\22\n\2\u0121\u0122\7\24\2\2\u0122\u0123\5\22\n\2\u0123")
-        buf.write("\u0124\7\25\2\2\u0124\u0125\5*\26\2\u0125+\3\2\2\2\20")
-        buf.write("/\66GPX`p\u00eb\u00fe\u0106\u010c\u010f\u0115\u011e")
+        buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\3\2\7\2\60\n")
+        buf.write("\2\f\2\16\2\63\13\2\3\2\3\2\3\3\3\3\5\39\n\3\3\4\3\4\3")
+        buf.write("\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5I\n")
+        buf.write("\5\3\6\3\6\7\6M\n\6\f\6\16\6P\13\6\3\6\3\6\3\7\3\7\7\7")
+        buf.write("V\n\7\f\7\16\7Y\13\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3")
+        buf.write("\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\n\3\n\3\n\3\n\3\n\5\n")
+        buf.write("p\n\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\5\13\u0110\n\13\3\f\3\f\3\f")
+        buf.write("\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\f\u0121")
+        buf.write("\n\f\3\r\3\r\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3")
+        buf.write("\17\3\17\3\17\3\17\5\17\u0131\n\17\3\20\3\20\3\21\3\21")
+        buf.write("\3\22\3\22\3\23\3\23\3\24\3\24\3\25\3\25\3\26\3\26\3\26")
+        buf.write("\3\26\5\26\u0143\n\26\3\27\3\27\3\27\2\2\30\2\4\6\b\n")
+        buf.write("\f\16\20\22\24\26\30\32\34\36 \"$&(*,\2\6\4\2\31\33*,")
+        buf.write("\3\2-\66\3\2\67=\4\2\3\4\17\20\2\u0156\2\61\3\2\2\2\4")
+        buf.write("8\3\2\2\2\6:\3\2\2\2\bH\3\2\2\2\nJ\3\2\2\2\fS\3\2\2\2")
+        buf.write("\16\\\3\2\2\2\20h\3\2\2\2\22o\3\2\2\2\24\u010f\3\2\2\2")
+        buf.write("\26\u0120\3\2\2\2\30\u0122\3\2\2\2\32\u0124\3\2\2\2\34")
+        buf.write("\u0130\3\2\2\2\36\u0132\3\2\2\2 \u0134\3\2\2\2\"\u0136")
+        buf.write("\3\2\2\2$\u0138\3\2\2\2&\u013a\3\2\2\2(\u013c\3\2\2\2")
+        buf.write("*\u0142\3\2\2\2,\u0144\3\2\2\2.\60\5\4\3\2/.\3\2\2\2\60")
+        buf.write("\63\3\2\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\64\3\2\2\2\63")
+        buf.write("\61\3\2\2\2\64\65\7\2\2\3\65\3\3\2\2\2\669\5\16\b\2\67")
+        buf.write("9\5\6\4\28\66\3\2\2\28\67\3\2\2\29\5\3\2\2\2:;\7F\2\2")
+        buf.write(";<\7\21\2\2<=\5\n\6\2=>\5\b\5\2>?\7G\2\2?\7\3\2\2\2@I")
+        buf.write("\5\24\13\2AB\5\24\13\2BC\5\n\6\2CI\3\2\2\2DE\5\24\13\2")
+        buf.write("EF\5\n\6\2FG\5\f\7\2GI\3\2\2\2H@\3\2\2\2HA\3\2\2\2HD\3")
+        buf.write("\2\2\2I\t\3\2\2\2JN\7H\2\2KM\5\24\13\2LK\3\2\2\2MP\3\2")
+        buf.write("\2\2NL\3\2\2\2NO\3\2\2\2OQ\3\2\2\2PN\3\2\2\2QR\7I\2\2")
+        buf.write("R\13\3\2\2\2SW\7H\2\2TV\7A\2\2UT\3\2\2\2VY\3\2\2\2WU\3")
+        buf.write("\2\2\2WX\3\2\2\2XZ\3\2\2\2YW\3\2\2\2Z[\7I\2\2[\r\3\2\2")
+        buf.write("\2\\]\7\22\2\2]^\5(\25\2^_\7H\2\2_`\5\20\t\2`a\7I\2\2")
+        buf.write("ab\7\24\2\2bc\5$\23\2cd\7\25\2\2de\5&\24\2ef\7\26\2\2")
+        buf.write("fg\5\22\n\2g\17\3\2\2\2hi\7\4\2\2i\21\3\2\2\2jp\7\23\2")
+        buf.write("\2kl\7H\2\2lm\5*\26\2mn\7I\2\2np\3\2\2\2oj\3\2\2\2ok\3")
+        buf.write("\2\2\2p\23\3\2\2\2q\u0110\5\30\r\2rs\5\32\16\2st\7\24")
+        buf.write("\2\2tu\5\24\13\2u\u0110\3\2\2\2vw\7F\2\2wx\7\n\2\2xy\5")
+        buf.write(",\27\2yz\7G\2\2z\u0110\3\2\2\2{|\7F\2\2|}\5\"\22\2}~\7")
+        buf.write("\n\2\2~\177\5\24\13\2\177\u0080\5\24\13\2\u0080\u0081")
+        buf.write("\7G\2\2\u0081\u0110\3\2\2\2\u0082\u0083\7F\2\2\u0083\u0084")
+        buf.write("\7\30\2\2\u0084\u0085\7H\2\2\u0085\u0086\7\n\2\2\u0086")
+        buf.write("\u0087\7I\2\2\u0087\u0088\5\24\13\2\u0088\u0089\7G\2\2")
+        buf.write("\u0089\u0110\3\2\2\2\u008a\u008b\7F\2\2\u008b\u008c\5")
+        buf.write("\36\20\2\u008c\u008d\7\n\2\2\u008d\u008e\5\24\13\2\u008e")
+        buf.write("\u008f\5\24\13\2\u008f\u0090\7G\2\2\u0090\u0110\3\2\2")
+        buf.write("\2\u0091\u0092\7F\2\2\u0092\u0093\7\31\2\2\u0093\u0094")
+        buf.write("\7\n\2\2\u0094\u0095\5\24\13\2\u0095\u0096\5\24\13\2\u0096")
+        buf.write("\u0097\7G\2\2\u0097\u0110\3\2\2\2\u0098\u0099\7F\2\2\u0099")
+        buf.write("\u009a\7\32\2\2\u009a\u009b\7\n\2\2\u009b\u009c\5\24\13")
+        buf.write("\2\u009c\u009d\5\24\13\2\u009d\u009e\7G\2\2\u009e\u0110")
+        buf.write("\3\2\2\2\u009f\u00a0\7F\2\2\u00a0\u00a1\7\33\2\2\u00a1")
+        buf.write("\u00a2\7\n\2\2\u00a2\u00a3\5\24\13\2\u00a3\u00a4\5\24")
+        buf.write("\13\2\u00a4\u00a5\7G\2\2\u00a5\u0110\3\2\2\2\u00a6\u00a7")
+        buf.write("\7F\2\2\u00a7\u00a8\5 \21\2\u00a8\u00a9\7\n\2\2\u00a9")
+        buf.write("\u00aa\5\24\13\2\u00aa\u00ab\5\24\13\2\u00ab\u00ac\7G")
+        buf.write("\2\2\u00ac\u0110\3\2\2\2\u00ad\u00ae\7F\2\2\u00ae\u00af")
+        buf.write("\5 \21\2\u00af\u00b0\5\24\13\2\u00b0\u00b1\5\24\13\2\u00b1")
+        buf.write("\u00b2\7G\2\2\u00b2\u0110\3\2\2\2\u00b3\u00b4\7F\2\2\u00b4")
+        buf.write("\u00b5\7\34\2\2\u00b5\u00b6\7\n\2\2\u00b6\u00b7\5\24\13")
+        buf.write("\2\u00b7\u00b8\5\24\13\2\u00b8\u00b9\7G\2\2\u00b9\u0110")
+        buf.write("\3\2\2\2\u00ba\u00bb\7F\2\2\u00bb\u00bc\7\34\2\2\u00bc")
+        buf.write("\u00bd\5\24\13\2\u00bd\u00be\5\24\13\2\u00be\u00bf\7G")
+        buf.write("\2\2\u00bf\u0110\3\2\2\2\u00c0\u00c1\7F\2\2\u00c1\u00c2")
+        buf.write("\7\35\2\2\u00c2\u00c3\7\n\2\2\u00c3\u00c4\5,\27\2\u00c4")
+        buf.write("\u00c5\5\24\13\2\u00c5\u00c6\7G\2\2\u00c6\u0110\3\2\2")
+        buf.write("\2\u00c7\u00c8\7F\2\2\u00c8\u00c9\7\36\2\2\u00c9\u00ca")
+        buf.write("\7\n\2\2\u00ca\u00cb\5\24\13\2\u00cb\u00cc\7G\2\2\u00cc")
+        buf.write("\u0110\3\2\2\2\u00cd\u00ce\7F\2\2\u00ce\u00cf\7\37\2\2")
+        buf.write("\u00cf\u00d0\7\n\2\2\u00d0\u00d1\5\24\13\2\u00d1\u00d2")
+        buf.write("\7G\2\2\u00d2\u0110\3\2\2\2\u00d3\u00d4\7F\2\2\u00d4\u00d5")
+        buf.write("\7 \2\2\u00d5\u00d6\7\n\2\2\u00d6\u00d7\5\24\13\2\u00d7")
+        buf.write("\u00d8\5\26\f\2\u00d8\u00d9\7G\2\2\u00d9\u0110\3\2\2\2")
+        buf.write("\u00da\u00db\7F\2\2\u00db\u00dc\7 \2\2\u00dc\u00dd\7\n")
+        buf.write("\2\2\u00dd\u00de\5\24\13\2\u00de\u00df\7G\2\2\u00df\u0110")
+        buf.write("\3\2\2\2\u00e0\u00e1\7F\2\2\u00e1\u00e2\7!\2\2\u00e2\u00e3")
+        buf.write("\7\n\2\2\u00e3\u00e4\5\24\13\2\u00e4\u00e5\5\24\13\2\u00e5")
+        buf.write("\u00e6\5\24\13\2\u00e6\u00e7\7G\2\2\u00e7\u0110\3\2\2")
+        buf.write("\2\u00e8\u00e9\7F\2\2\u00e9\u00ea\7\"\2\2\u00ea\u00eb")
+        buf.write("\7\n\2\2\u00eb\u00ec\5\24\13\2\u00ec\u00ed\7G\2\2\u00ed")
+        buf.write("\u0110\3\2\2\2\u00ee\u00ef\7F\2\2\u00ef\u00f0\7\"\2\2")
+        buf.write("\u00f0\u00f1\5\24\13\2\u00f1\u00f2\7G\2\2\u00f2\u0110")
+        buf.write("\3\2\2\2\u00f3\u00f4\7F\2\2\u00f4\u00f5\7#\2\2\u00f5\u00f6")
+        buf.write("\7\n\2\2\u00f6\u00f7\5\24\13\2\u00f7\u00f8\5\26\f\2\u00f8")
+        buf.write("\u00f9\7G\2\2\u00f9\u0110\3\2\2\2\u00fa\u00fb\7F\2\2\u00fb")
+        buf.write("\u00fc\7$\2\2\u00fc\u00fd\7\n\2\2\u00fd\u00fe\5\24\13")
+        buf.write("\2\u00fe\u00ff\5\26\f\2\u00ff\u0100\7G\2\2\u0100\u0110")
+        buf.write("\3\2\2\2\u0101\u0102\7F\2\2\u0102\u0103\7#\2\2\u0103\u0104")
+        buf.write("\7\n\2\2\u0104\u0105\5\24\13\2\u0105\u0106\7G\2\2\u0106")
+        buf.write("\u0110\3\2\2\2\u0107\u0108\7F\2\2\u0108\u0109\7$\2\2\u0109")
+        buf.write("\u010a\7\n\2\2\u010a\u010b\5\24\13\2\u010b\u010c\7G\2")
+        buf.write("\2\u010c\u0110\3\2\2\2\u010d\u0110\5\26\f\2\u010e\u0110")
+        buf.write("\5,\27\2\u010fq\3\2\2\2\u010fr\3\2\2\2\u010fv\3\2\2\2")
+        buf.write("\u010f{\3\2\2\2\u010f\u0082\3\2\2\2\u010f\u008a\3\2\2")
+        buf.write("\2\u010f\u0091\3\2\2\2\u010f\u0098\3\2\2\2\u010f\u009f")
+        buf.write("\3\2\2\2\u010f\u00a6\3\2\2\2\u010f\u00ad\3\2\2\2\u010f")
+        buf.write("\u00b3\3\2\2\2\u010f\u00ba\3\2\2\2\u010f\u00c0\3\2\2\2")
+        buf.write("\u010f\u00c7\3\2\2\2\u010f\u00cd\3\2\2\2\u010f\u00d3\3")
+        buf.write("\2\2\2\u010f\u00da\3\2\2\2\u010f\u00e0\3\2\2\2\u010f\u00e8")
+        buf.write("\3\2\2\2\u010f\u00ee\3\2\2\2\u010f\u00f3\3\2\2\2\u010f")
+        buf.write("\u00fa\3\2\2\2\u010f\u0101\3\2\2\2\u010f\u0107\3\2\2\2")
+        buf.write("\u010f\u010d\3\2\2\2\u010f\u010e\3\2\2\2\u0110\25\3\2")
+        buf.write("\2\2\u0111\u0121\5\30\r\2\u0112\u0113\5\32\16\2\u0113")
+        buf.write("\u0114\7\24\2\2\u0114\u0115\5\24\13\2\u0115\u0121\3\2")
+        buf.write("\2\2\u0116\u0117\7H\2\2\u0117\u0118\5\34\17\2\u0118\u0119")
+        buf.write("\7I\2\2\u0119\u011a\7(\2\2\u011a\u011b\5\26\f\2\u011b")
+        buf.write("\u0121\3\2\2\2\u011c\u011d\7H\2\2\u011d\u011e\7I\2\2\u011e")
+        buf.write("\u011f\7(\2\2\u011f\u0121\5\26\f\2\u0120\u0111\3\2\2\2")
+        buf.write("\u0120\u0112\3\2\2\2\u0120\u0116\3\2\2\2\u0120\u011c\3")
+        buf.write("\2\2\2\u0121\27\3\2\2\2\u0122\u0123\7A\2\2\u0123\31\3")
+        buf.write("\2\2\2\u0124\u0125\7A\2\2\u0125\33\3\2\2\2\u0126\u0127")
+        buf.write("\5\24\13\2\u0127\u0128\7\26\2\2\u0128\u0129\5\24\13\2")
+        buf.write("\u0129\u012a\7\27\2\2\u012a\u012b\5\34\17\2\u012b\u0131")
+        buf.write("\3\2\2\2\u012c\u012d\5\24\13\2\u012d\u012e\7\26\2\2\u012e")
+        buf.write("\u012f\5\24\13\2\u012f\u0131\3\2\2\2\u0130\u0126\3\2\2")
+        buf.write("\2\u0130\u012c\3\2\2\2\u0131\35\3\2\2\2\u0132\u0133\t")
+        buf.write("\2\2\2\u0133\37\3\2\2\2\u0134\u0135\t\3\2\2\u0135!\3\2")
+        buf.write("\2\2\u0136\u0137\t\4\2\2\u0137#\3\2\2\2\u0138\u0139\7")
+        buf.write("\n\2\2\u0139%\3\2\2\2\u013a\u013b\7\n\2\2\u013b\'\3\2")
+        buf.write("\2\2\u013c\u013d\7A\2\2\u013d)\3\2\2\2\u013e\u0143\5,")
+        buf.write("\27\2\u013f\u0140\5,\27\2\u0140\u0141\5*\26\2\u0141\u0143")
+        buf.write("\3\2\2\2\u0142\u013e\3\2\2\2\u0142\u013f\3\2\2\2\u0143")
+        buf.write("+\3\2\2\2\u0144\u0145\t\5\2\2\u0145-\3\2\2\2\f\618HNW")
+        buf.write("o\u010f\u0120\u0130\u0142")
         return buf.getvalue()
 
 
@@ -148,31 +166,34 @@ class KQueryParser ( Parser ):
 
     literalNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'0b'", "'0o'", "'0x'", "'true'", "'false'", "'query'", 
-                     "'array'", "'symbolic'", "':'", "'->'", "'='", "','", 
-                     "'Not'", "'Shl'", "'LShr'", "'AShr'", "'Concat'", "'Extract'", 
-                     "'ZExt'", "'SExt'", "'Read'", "'Select'", "'Neg'", 
-                     "'ReadLSB'", "'ReadMSB'", "'+'", "'-'", "'i'", "'@'", 
-                     "'fp'", "'And'", "'Or'", "'Xor'", "'Eq'", "'Ne'", "'Ult'", 
-                     "'Ule'", "'Ugt'", "'Uge'", "'Slt'", "'Sle'", "'Sgt'", 
-                     "'Sge'", "'Add'", "'Sub'", "'Mul'", "'UDiv'", "'URem'", 
-                     "'SDiv'", "'SRem'", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "'0b'", "'0o'", "'w'", "'0x'", "'true'", 
+                     "'false'", "'query'", "'array'", "'symbolic'", "':'", 
+                     "'->'", "'='", "','", "'Not'", "'Shl'", "'LShr'", "'AShr'", 
+                     "'Concat'", "'Extract'", "'ZExt'", "'SExt'", "'Read'", 
+                     "'Select'", "'Neg'", "'ReadLSB'", "'ReadMSB'", "'+'", 
+                     "'-'", "'i'", "'@'", "'fp'", "'And'", "'Or'", "'Xor'", 
+                     "'Eq'", "'Ne'", "'Ult'", "'Ule'", "'Ugt'", "'Uge'", 
+                     "'Slt'", "'Sle'", "'Sgt'", "'Sge'", "'Add'", "'Sub'", 
+                     "'Mul'", "'UDiv'", "'URem'", "'SDiv'", "'SRem'", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "'('", "')'", 
                      "'['", "']'", "'{'", "'}'" ]
 
-    symbolicNames = [ "<INVALID>", "SignedConstant", "Constant", "DecConstant", 
-                      "BinConstant", "OctConstant", "HexConstant", "WidthType", 
-                      "BinId", "OctId", "HexId", "TrueMatch", "FalseMatch", 
-                      "Query", "Array", "Symbolic", "Colon", "Arrow", "Equal", 
-                      "COMMA", "NOT", "SHL", "LSHR", "ASHR", "CONCAT", "EXTRACT", 
-                      "ZEXT", "SEXT", "READ", "SELECT", "NEGETION", "READLSB", 
-                      "READMSB", "PLUS", "MINUS", "INT", "ATR", "FP", "BITWISEAND", 
+    symbolicNames = [ "<INVALID>", "SignedConstant", "Constant", "BinConstant", 
+                      "OctConstant", "HexConstant", "FloatingPointType", 
+                      "IntegerType", "WidthType", "BinId", "OctId", "WIDTH", 
+                      "HexId", "TrueMatch", "FalseMatch", "Query", "Array", 
+                      "Symbolic", "Colon", "Arrow", "Equal", "COMMA", "NOT", 
+                      "SHL", "LSHR", "ASHR", "CONCAT", "EXTRACT", "ZEXT", 
+                      "SEXT", "READ", "SELECT", "NEGETION", "READLSB", "READMSB", 
+                      "PLUS", "MINUS", "INT", "ATR", "FP", "BITWISEAND", 
                       "BITWISEOR", "BITWISEXOR", "EQ", "NEQ", "ULT", "ULE", 
                       "UGT", "UGE", "SLT", "SLE", "SGT", "SGE", "ADD", "SUB", 
-                      "MUL", "UDIV", "UREM", "SDIV", "SREM", "Identifier", 
-                      "Digit", "Whitespace", "Newline", "BlockComment", 
-                      "LineComment", "LeftParen", "RightParen", "LeftBracket", 
-                      "RightBracket", "LeftBrace", "RightBrace" ]
+                      "MUL", "UDIV", "UREM", "SDIV", "SREM", "BIN_DIGIT", 
+                      "OCTAL_DIGIT", "HEX_DIGIT", "Identifier", "Whitespace", 
+                      "Newline", "BlockComment", "LineComment", "LeftParen", 
+                      "RightParen", "LeftBracket", "RightBracket", "LeftBrace", 
+                      "RightBrace" ]
 
     RULE_kqueryExpression = 0
     RULE_ktranslationUnit = 1
@@ -181,98 +202,103 @@ class KQueryParser ( Parser ):
     RULE_evalExprList = 4
     RULE_evalArrayList = 5
     RULE_arrayDeclaration = 6
-    RULE_arrayInitializer = 7
-    RULE_expression = 8
-    RULE_bitwiseExpr = 9
-    RULE_comparisonExpr = 10
-    RULE_arithmeticExpr = 11
-    RULE_domain = 12
-    RULE_rangeLimit = 13
-    RULE_arrName = 14
-    RULE_numberList = 15
-    RULE_number = 16
-    RULE_floatingPointwidthType = 17
-    RULE_integerwidthType = 18
-    RULE_version = 19
-    RULE_updateList = 20
+    RULE_arrayElemsStub = 7
+    RULE_arrayInitializer = 8
+    RULE_expression = 9
+    RULE_version = 10
+    RULE_varName = 11
+    RULE_namedConstant = 12
+    RULE_updateList = 13
+    RULE_bitwiseExpr = 14
+    RULE_comparisonExpr = 15
+    RULE_arithmeticExpr = 16
+    RULE_domain = 17
+    RULE_rangeLimit = 18
+    RULE_arrName = 19
+    RULE_numberList = 20
+    RULE_number = 21
 
     ruleNames =  [ "kqueryExpression", "ktranslationUnit", "queryCommand", 
                    "queryExpr", "evalExprList", "evalArrayList", "arrayDeclaration", 
-                   "arrayInitializer", "expression", "bitwiseExpr", "comparisonExpr", 
-                   "arithmeticExpr", "domain", "rangeLimit", "arrName", 
-                   "numberList", "number", "floatingPointwidthType", "integerwidthType", 
-                   "version", "updateList" ]
+                   "arrayElemsStub", "arrayInitializer", "expression", "version", 
+                   "varName", "namedConstant", "updateList", "bitwiseExpr", 
+                   "comparisonExpr", "arithmeticExpr", "domain", "rangeLimit", 
+                   "arrName", "numberList", "number" ]
 
     EOF = Token.EOF
     SignedConstant=1
     Constant=2
-    DecConstant=3
-    BinConstant=4
-    OctConstant=5
-    HexConstant=6
-    WidthType=7
-    BinId=8
-    OctId=9
-    HexId=10
-    TrueMatch=11
-    FalseMatch=12
-    Query=13
-    Array=14
-    Symbolic=15
-    Colon=16
-    Arrow=17
-    Equal=18
-    COMMA=19
-    NOT=20
-    SHL=21
-    LSHR=22
-    ASHR=23
-    CONCAT=24
-    EXTRACT=25
-    ZEXT=26
-    SEXT=27
-    READ=28
-    SELECT=29
-    NEGETION=30
-    READLSB=31
-    READMSB=32
-    PLUS=33
-    MINUS=34
-    INT=35
-    ATR=36
-    FP=37
-    BITWISEAND=38
-    BITWISEOR=39
-    BITWISEXOR=40
-    EQ=41
-    NEQ=42
-    ULT=43
-    ULE=44
-    UGT=45
-    UGE=46
-    SLT=47
-    SLE=48
-    SGT=49
-    SGE=50
-    ADD=51
-    SUB=52
-    MUL=53
-    UDIV=54
-    UREM=55
-    SDIV=56
-    SREM=57
-    Identifier=58
-    Digit=59
-    Whitespace=60
-    Newline=61
-    BlockComment=62
-    LineComment=63
-    LeftParen=64
-    RightParen=65
-    LeftBracket=66
-    RightBracket=67
-    LeftBrace=68
-    RightBrace=69
+    BinConstant=3
+    OctConstant=4
+    HexConstant=5
+    FloatingPointType=6
+    IntegerType=7
+    WidthType=8
+    BinId=9
+    OctId=10
+    WIDTH=11
+    HexId=12
+    TrueMatch=13
+    FalseMatch=14
+    Query=15
+    Array=16
+    Symbolic=17
+    Colon=18
+    Arrow=19
+    Equal=20
+    COMMA=21
+    NOT=22
+    SHL=23
+    LSHR=24
+    ASHR=25
+    CONCAT=26
+    EXTRACT=27
+    ZEXT=28
+    SEXT=29
+    READ=30
+    SELECT=31
+    NEGETION=32
+    READLSB=33
+    READMSB=34
+    PLUS=35
+    MINUS=36
+    INT=37
+    ATR=38
+    FP=39
+    BITWISEAND=40
+    BITWISEOR=41
+    BITWISEXOR=42
+    EQ=43
+    NEQ=44
+    ULT=45
+    ULE=46
+    UGT=47
+    UGE=48
+    SLT=49
+    SLE=50
+    SGT=51
+    SGE=52
+    ADD=53
+    SUB=54
+    MUL=55
+    UDIV=56
+    UREM=57
+    SDIV=58
+    SREM=59
+    BIN_DIGIT=60
+    OCTAL_DIGIT=61
+    HEX_DIGIT=62
+    Identifier=63
+    Whitespace=64
+    Newline=65
+    BlockComment=66
+    LineComment=67
+    LeftParen=68
+    RightParen=69
+    LeftBracket=70
+    RightBracket=71
+    LeftBrace=72
+    RightBrace=73
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -327,17 +353,17 @@ class KQueryParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 45
+            self.state = 47
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==KQueryParser.Array or _la==KQueryParser.LeftParen:
-                self.state = 42
+                self.state = 44
                 self.ktranslationUnit()
-                self.state = 47
+                self.state = 49
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 48
+            self.state = 50
             self.match(KQueryParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -388,17 +414,17 @@ class KQueryParser ( Parser ):
         localctx = KQueryParser.KtranslationUnitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_ktranslationUnit)
         try:
-            self.state = 52
+            self.state = 54
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [KQueryParser.Array]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 50
+                self.state = 52
                 self.arrayDeclaration()
                 pass
             elif token in [KQueryParser.LeftParen]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 51
+                self.state = 53
                 self.queryCommand()
                 pass
             else:
@@ -463,15 +489,15 @@ class KQueryParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_queryCommand)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 54
-            self.match(KQueryParser.LeftParen)
-            self.state = 55
-            self.match(KQueryParser.Query)
             self.state = 56
-            self.evalExprList()
+            self.match(KQueryParser.LeftParen)
             self.state = 57
-            self.queryExpr()
+            self.match(KQueryParser.Query)
             self.state = 58
+            self.evalExprList()
+            self.state = 59
+            self.queryExpr()
+            self.state = 60
             self.match(KQueryParser.RightParen)
         except RecognitionException as re:
             localctx.exception = re
@@ -526,36 +552,31 @@ class KQueryParser ( Parser ):
         localctx = KQueryParser.QueryExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_queryExpr)
         try:
-            self.state = 69
+            self.state = 70
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 60
+                self.state = 62
                 self.expression()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 61
+                self.state = 63
                 self.expression()
-                self.state = 62
+                self.state = 64
                 self.evalExprList()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 64
-                self.expression()
-                self.state = 65
-                self.evalExprList()
                 self.state = 66
+                self.expression()
+                self.state = 67
+                self.evalExprList()
+                self.state = 68
                 self.evalArrayList()
-                pass
-
-            elif la_ == 4:
-                self.enterOuterAlt(localctx, 4)
-
                 pass
 
 
@@ -578,12 +599,15 @@ class KQueryParser ( Parser ):
         def LeftBracket(self):
             return self.getToken(KQueryParser.LeftBracket, 0)
 
-        def expression(self):
-            return self.getTypedRuleContext(KQueryParser.ExpressionContext,0)
-
-
         def RightBracket(self):
             return self.getToken(KQueryParser.RightBracket, 0)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(KQueryParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(KQueryParser.ExpressionContext,i)
+
 
         def getRuleIndex(self):
             return KQueryParser.RULE_evalExprList
@@ -609,34 +633,23 @@ class KQueryParser ( Parser ):
 
         localctx = KQueryParser.EvalExprListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_evalExprList)
+        self._la = 0 # Token type
         try:
-            self.state = 78
+            self.enterOuterAlt(localctx, 1)
+            self.state = 72
+            self.match(KQueryParser.LeftBracket)
+            self.state = 76
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 71
-                self.match(KQueryParser.LeftBracket)
-                self.state = 72
-                self.expression()
+            _la = self._input.LA(1)
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << KQueryParser.SignedConstant) | (1 << KQueryParser.Constant) | (1 << KQueryParser.TrueMatch) | (1 << KQueryParser.FalseMatch) | (1 << KQueryParser.Identifier))) != 0) or _la==KQueryParser.LeftParen or _la==KQueryParser.LeftBracket:
                 self.state = 73
-                self.match(KQueryParser.RightBracket)
-                pass
+                self.expression()
+                self.state = 78
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
 
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 75
-                self.match(KQueryParser.LeftBracket)
-                self.state = 76
-                self.match(KQueryParser.RightBracket)
-                pass
-
-            elif la_ == 3:
-                self.enterOuterAlt(localctx, 3)
-
-                pass
-
-
+            self.state = 79
+            self.match(KQueryParser.RightBracket)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -656,11 +669,14 @@ class KQueryParser ( Parser ):
         def LeftBracket(self):
             return self.getToken(KQueryParser.LeftBracket, 0)
 
-        def Identifier(self):
-            return self.getToken(KQueryParser.Identifier, 0)
-
         def RightBracket(self):
             return self.getToken(KQueryParser.RightBracket, 0)
+
+        def Identifier(self, i:int=None):
+            if i is None:
+                return self.getTokens(KQueryParser.Identifier)
+            else:
+                return self.getToken(KQueryParser.Identifier, i)
 
         def getRuleIndex(self):
             return KQueryParser.RULE_evalArrayList
@@ -686,34 +702,23 @@ class KQueryParser ( Parser ):
 
         localctx = KQueryParser.EvalArrayListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_evalArrayList)
+        self._la = 0 # Token type
         try:
-            self.state = 86
+            self.enterOuterAlt(localctx, 1)
+            self.state = 81
+            self.match(KQueryParser.LeftBracket)
+            self.state = 85
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 80
-                self.match(KQueryParser.LeftBracket)
-                self.state = 81
-                self.match(KQueryParser.Identifier)
+            _la = self._input.LA(1)
+            while _la==KQueryParser.Identifier:
                 self.state = 82
-                self.match(KQueryParser.RightBracket)
-                pass
+                self.match(KQueryParser.Identifier)
+                self.state = 87
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
 
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 83
-                self.match(KQueryParser.LeftBracket)
-                self.state = 84
-                self.match(KQueryParser.RightBracket)
-                pass
-
-            elif la_ == 3:
-                self.enterOuterAlt(localctx, 3)
-
-                pass
-
-
+            self.state = 88
+            self.match(KQueryParser.RightBracket)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -740,6 +745,10 @@ class KQueryParser ( Parser ):
         def LeftBracket(self):
             return self.getToken(KQueryParser.LeftBracket, 0)
 
+        def arrayElemsStub(self):
+            return self.getTypedRuleContext(KQueryParser.ArrayElemsStubContext,0)
+
+
         def RightBracket(self):
             return self.getToken(KQueryParser.RightBracket, 0)
 
@@ -763,12 +772,6 @@ class KQueryParser ( Parser ):
         def arrayInitializer(self):
             return self.getTypedRuleContext(KQueryParser.ArrayInitializerContext,0)
 
-
-        def Digit(self, i:int=None):
-            if i is None:
-                return self.getTokens(KQueryParser.Digit)
-            else:
-                return self.getToken(KQueryParser.Digit, i)
 
         def getRuleIndex(self):
             return KQueryParser.RULE_arrayDeclaration
@@ -794,39 +797,77 @@ class KQueryParser ( Parser ):
 
         localctx = KQueryParser.ArrayDeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_arrayDeclaration)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 88
-            self.match(KQueryParser.Array)
-            self.state = 89
-            self.arrName()
             self.state = 90
+            self.match(KQueryParser.Array)
+            self.state = 91
+            self.arrName()
+            self.state = 92
             self.match(KQueryParser.LeftBracket)
+            self.state = 93
+            self.arrayElemsStub()
             self.state = 94
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while _la==KQueryParser.Digit:
-                self.state = 91
-                self.match(KQueryParser.Digit)
-                self.state = 96
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-
-            self.state = 97
             self.match(KQueryParser.RightBracket)
-            self.state = 98
+            self.state = 95
             self.match(KQueryParser.Colon)
-            self.state = 99
+            self.state = 96
             self.domain()
-            self.state = 100
+            self.state = 97
             self.match(KQueryParser.Arrow)
-            self.state = 101
+            self.state = 98
             self.rangeLimit()
-            self.state = 102
+            self.state = 99
             self.match(KQueryParser.Equal)
-            self.state = 103
+            self.state = 100
             self.arrayInitializer()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ArrayElemsStubContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def Constant(self):
+            return self.getToken(KQueryParser.Constant, 0)
+
+        def getRuleIndex(self):
+            return KQueryParser.RULE_arrayElemsStub
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArrayElemsStub" ):
+                listener.enterArrayElemsStub(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArrayElemsStub" ):
+                listener.exitArrayElemsStub(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArrayElemsStub" ):
+                return visitor.visitArrayElemsStub(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def arrayElemsStub(self):
+
+        localctx = KQueryParser.ArrayElemsStubContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 14, self.RULE_arrayElemsStub)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 102
+            self.match(KQueryParser.Constant)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -879,23 +920,23 @@ class KQueryParser ( Parser ):
     def arrayInitializer(self):
 
         localctx = KQueryParser.ArrayInitializerContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_arrayInitializer)
+        self.enterRule(localctx, 16, self.RULE_arrayInitializer)
         try:
-            self.state = 110
+            self.state = 109
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [KQueryParser.Symbolic]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 105
+                self.state = 104
                 self.match(KQueryParser.Symbolic)
                 pass
             elif token in [KQueryParser.LeftBracket]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 106
+                self.state = 105
                 self.match(KQueryParser.LeftBracket)
-                self.state = 107
+                self.state = 106
                 self.numberList()
-                self.state = 108
+                self.state = 107
                 self.match(KQueryParser.RightBracket)
                 pass
             else:
@@ -917,8 +958,13 @@ class KQueryParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def Identifier(self):
-            return self.getToken(KQueryParser.Identifier, 0)
+        def varName(self):
+            return self.getTypedRuleContext(KQueryParser.VarNameContext,0)
+
+
+        def namedConstant(self):
+            return self.getTypedRuleContext(KQueryParser.NamedConstantContext,0)
+
 
         def Colon(self):
             return self.getToken(KQueryParser.Colon, 0)
@@ -1027,24 +1073,24 @@ class KQueryParser ( Parser ):
     def expression(self):
 
         localctx = KQueryParser.ExpressionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_expression)
+        self.enterRule(localctx, 18, self.RULE_expression)
         try:
-            self.state = 233
+            self.state = 269
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 112
-                self.match(KQueryParser.Identifier)
+                self.state = 111
+                self.varName()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
+                self.state = 112
+                self.namedConstant()
                 self.state = 113
-                self.match(KQueryParser.Identifier)
-                self.state = 114
                 self.match(KQueryParser.Colon)
-                self.state = 115
+                self.state = 114
                 self.expression()
                 pass
 
@@ -1164,7 +1210,6 @@ class KQueryParser ( Parser ):
                 self.match(KQueryParser.LeftParen)
                 self.state = 165
                 self.comparisonExpr()
-
                 self.state = 166
                 self.match(KQueryParser.WidthType)
                 self.state = 167
@@ -1180,56 +1225,55 @@ class KQueryParser ( Parser ):
                 self.state = 171
                 self.match(KQueryParser.LeftParen)
                 self.state = 172
-                self.match(KQueryParser.CONCAT)
-
+                self.comparisonExpr()
                 self.state = 173
-                self.match(KQueryParser.WidthType)
+                self.expression()
                 self.state = 174
                 self.expression()
                 self.state = 175
-                self.expression()
-                self.state = 176
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 12:
                 self.enterOuterAlt(localctx, 12)
-                self.state = 178
+                self.state = 177
                 self.match(KQueryParser.LeftParen)
+                self.state = 178
+                self.match(KQueryParser.CONCAT)
                 self.state = 179
-                self.match(KQueryParser.EXTRACT)
-                self.state = 180
                 self.match(KQueryParser.WidthType)
-                self.state = 181
-                self.number()
-                self.state = 182
+                self.state = 180
                 self.expression()
-                self.state = 183
+                self.state = 181
+                self.expression()
+                self.state = 182
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 13:
                 self.enterOuterAlt(localctx, 13)
-                self.state = 185
+                self.state = 184
                 self.match(KQueryParser.LeftParen)
+                self.state = 185
+                self.match(KQueryParser.CONCAT)
                 self.state = 186
-                self.match(KQueryParser.ZEXT)
-                self.state = 187
-                self.match(KQueryParser.WidthType)
-                self.state = 188
                 self.expression()
-                self.state = 189
+                self.state = 187
+                self.expression()
+                self.state = 188
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 14:
                 self.enterOuterAlt(localctx, 14)
-                self.state = 191
+                self.state = 190
                 self.match(KQueryParser.LeftParen)
+                self.state = 191
+                self.match(KQueryParser.EXTRACT)
                 self.state = 192
-                self.match(KQueryParser.SEXT)
-                self.state = 193
                 self.match(KQueryParser.WidthType)
+                self.state = 193
+                self.number()
                 self.state = 194
                 self.expression()
                 self.state = 195
@@ -1241,86 +1285,472 @@ class KQueryParser ( Parser ):
                 self.state = 197
                 self.match(KQueryParser.LeftParen)
                 self.state = 198
-                self.match(KQueryParser.READ)
+                self.match(KQueryParser.ZEXT)
                 self.state = 199
                 self.match(KQueryParser.WidthType)
                 self.state = 200
                 self.expression()
                 self.state = 201
-                self.version()
-                self.state = 202
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 16:
                 self.enterOuterAlt(localctx, 16)
-                self.state = 204
+                self.state = 203
                 self.match(KQueryParser.LeftParen)
+                self.state = 204
+                self.match(KQueryParser.SEXT)
                 self.state = 205
-                self.match(KQueryParser.SELECT)
-                self.state = 206
                 self.match(KQueryParser.WidthType)
+                self.state = 206
+                self.expression()
                 self.state = 207
-                self.expression()
-                self.state = 208
-                self.expression()
-                self.state = 209
-                self.expression()
-                self.state = 210
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 17:
                 self.enterOuterAlt(localctx, 17)
-                self.state = 212
+                self.state = 209
                 self.match(KQueryParser.LeftParen)
-                self.state = 213
-                self.match(KQueryParser.NEGETION)
-
-                self.state = 214
+                self.state = 210
+                self.match(KQueryParser.READ)
+                self.state = 211
                 self.match(KQueryParser.WidthType)
-                self.state = 215
+                self.state = 212
                 self.expression()
-                self.state = 216
+                self.state = 213
+                self.version()
+                self.state = 214
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 18:
                 self.enterOuterAlt(localctx, 18)
-                self.state = 218
+                self.state = 216
                 self.match(KQueryParser.LeftParen)
-                self.state = 219
-                self.match(KQueryParser.READLSB)
-                self.state = 220
+                self.state = 217
+                self.match(KQueryParser.READ)
+                self.state = 218
                 self.match(KQueryParser.WidthType)
-                self.state = 221
+                self.state = 219
                 self.expression()
-                self.state = 222
-                self.version()
-                self.state = 223
+                self.state = 220
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 19:
                 self.enterOuterAlt(localctx, 19)
-                self.state = 225
+                self.state = 222
                 self.match(KQueryParser.LeftParen)
-                self.state = 226
-                self.match(KQueryParser.READMSB)
-                self.state = 227
+                self.state = 223
+                self.match(KQueryParser.SELECT)
+                self.state = 224
                 self.match(KQueryParser.WidthType)
-                self.state = 228
+                self.state = 225
                 self.expression()
-                self.state = 229
-                self.version()
-                self.state = 230
+                self.state = 226
+                self.expression()
+                self.state = 227
+                self.expression()
+                self.state = 228
                 self.match(KQueryParser.RightParen)
                 pass
 
             elif la_ == 20:
                 self.enterOuterAlt(localctx, 20)
+                self.state = 230
+                self.match(KQueryParser.LeftParen)
+                self.state = 231
+                self.match(KQueryParser.NEGETION)
                 self.state = 232
+                self.match(KQueryParser.WidthType)
+                self.state = 233
+                self.expression()
+                self.state = 234
+                self.match(KQueryParser.RightParen)
+                pass
+
+            elif la_ == 21:
+                self.enterOuterAlt(localctx, 21)
+                self.state = 236
+                self.match(KQueryParser.LeftParen)
+                self.state = 237
+                self.match(KQueryParser.NEGETION)
+                self.state = 238
+                self.expression()
+                self.state = 239
+                self.match(KQueryParser.RightParen)
+                pass
+
+            elif la_ == 22:
+                self.enterOuterAlt(localctx, 22)
+                self.state = 241
+                self.match(KQueryParser.LeftParen)
+                self.state = 242
+                self.match(KQueryParser.READLSB)
+                self.state = 243
+                self.match(KQueryParser.WidthType)
+                self.state = 244
+                self.expression()
+                self.state = 245
+                self.version()
+                self.state = 246
+                self.match(KQueryParser.RightParen)
+                pass
+
+            elif la_ == 23:
+                self.enterOuterAlt(localctx, 23)
+                self.state = 248
+                self.match(KQueryParser.LeftParen)
+                self.state = 249
+                self.match(KQueryParser.READMSB)
+                self.state = 250
+                self.match(KQueryParser.WidthType)
+                self.state = 251
+                self.expression()
+                self.state = 252
+                self.version()
+                self.state = 253
+                self.match(KQueryParser.RightParen)
+                pass
+
+            elif la_ == 24:
+                self.enterOuterAlt(localctx, 24)
+                self.state = 255
+                self.match(KQueryParser.LeftParen)
+                self.state = 256
+                self.match(KQueryParser.READLSB)
+                self.state = 257
+                self.match(KQueryParser.WidthType)
+                self.state = 258
+                self.expression()
+                self.state = 259
+                self.match(KQueryParser.RightParen)
+                pass
+
+            elif la_ == 25:
+                self.enterOuterAlt(localctx, 25)
+                self.state = 261
+                self.match(KQueryParser.LeftParen)
+                self.state = 262
+                self.match(KQueryParser.READMSB)
+                self.state = 263
+                self.match(KQueryParser.WidthType)
+                self.state = 264
+                self.expression()
+                self.state = 265
+                self.match(KQueryParser.RightParen)
+                pass
+
+            elif la_ == 26:
+                self.enterOuterAlt(localctx, 26)
+                self.state = 267
+                self.version()
+                pass
+
+            elif la_ == 27:
+                self.enterOuterAlt(localctx, 27)
+                self.state = 268
                 self.number()
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class VersionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def varName(self):
+            return self.getTypedRuleContext(KQueryParser.VarNameContext,0)
+
+
+        def namedConstant(self):
+            return self.getTypedRuleContext(KQueryParser.NamedConstantContext,0)
+
+
+        def Colon(self):
+            return self.getToken(KQueryParser.Colon, 0)
+
+        def expression(self):
+            return self.getTypedRuleContext(KQueryParser.ExpressionContext,0)
+
+
+        def LeftBracket(self):
+            return self.getToken(KQueryParser.LeftBracket, 0)
+
+        def updateList(self):
+            return self.getTypedRuleContext(KQueryParser.UpdateListContext,0)
+
+
+        def RightBracket(self):
+            return self.getToken(KQueryParser.RightBracket, 0)
+
+        def ATR(self):
+            return self.getToken(KQueryParser.ATR, 0)
+
+        def version(self):
+            return self.getTypedRuleContext(KQueryParser.VersionContext,0)
+
+
+        def getRuleIndex(self):
+            return KQueryParser.RULE_version
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterVersion" ):
+                listener.enterVersion(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitVersion" ):
+                listener.exitVersion(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVersion" ):
+                return visitor.visitVersion(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def version(self):
+
+        localctx = KQueryParser.VersionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 20, self.RULE_version)
+        try:
+            self.state = 286
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 271
+                self.varName()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 272
+                self.namedConstant()
+                self.state = 273
+                self.match(KQueryParser.Colon)
+                self.state = 274
+                self.expression()
+                pass
+
+            elif la_ == 3:
+                self.enterOuterAlt(localctx, 3)
+                self.state = 276
+                self.match(KQueryParser.LeftBracket)
+                self.state = 277
+                self.updateList()
+                self.state = 278
+                self.match(KQueryParser.RightBracket)
+                self.state = 279
+                self.match(KQueryParser.ATR)
+                self.state = 280
+                self.version()
+                pass
+
+            elif la_ == 4:
+                self.enterOuterAlt(localctx, 4)
+                self.state = 282
+                self.match(KQueryParser.LeftBracket)
+                self.state = 283
+                self.match(KQueryParser.RightBracket)
+                self.state = 284
+                self.match(KQueryParser.ATR)
+                self.state = 285
+                self.version()
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class VarNameContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def Identifier(self):
+            return self.getToken(KQueryParser.Identifier, 0)
+
+        def getRuleIndex(self):
+            return KQueryParser.RULE_varName
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterVarName" ):
+                listener.enterVarName(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitVarName" ):
+                listener.exitVarName(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVarName" ):
+                return visitor.visitVarName(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def varName(self):
+
+        localctx = KQueryParser.VarNameContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 22, self.RULE_varName)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 288
+            self.match(KQueryParser.Identifier)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class NamedConstantContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def Identifier(self):
+            return self.getToken(KQueryParser.Identifier, 0)
+
+        def getRuleIndex(self):
+            return KQueryParser.RULE_namedConstant
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNamedConstant" ):
+                listener.enterNamedConstant(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNamedConstant" ):
+                listener.exitNamedConstant(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNamedConstant" ):
+                return visitor.visitNamedConstant(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def namedConstant(self):
+
+        localctx = KQueryParser.NamedConstantContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 24, self.RULE_namedConstant)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 290
+            self.match(KQueryParser.Identifier)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class UpdateListContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(KQueryParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(KQueryParser.ExpressionContext,i)
+
+
+        def Equal(self):
+            return self.getToken(KQueryParser.Equal, 0)
+
+        def COMMA(self):
+            return self.getToken(KQueryParser.COMMA, 0)
+
+        def updateList(self):
+            return self.getTypedRuleContext(KQueryParser.UpdateListContext,0)
+
+
+        def getRuleIndex(self):
+            return KQueryParser.RULE_updateList
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUpdateList" ):
+                listener.enterUpdateList(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUpdateList" ):
+                listener.exitUpdateList(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUpdateList" ):
+                return visitor.visitUpdateList(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def updateList(self):
+
+        localctx = KQueryParser.UpdateListContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 26, self.RULE_updateList)
+        try:
+            self.state = 302
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 292
+                self.expression()
+                self.state = 293
+                self.match(KQueryParser.Equal)
+                self.state = 294
+                self.expression()
+                self.state = 295
+                self.match(KQueryParser.COMMA)
+                self.state = 296
+                self.updateList()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 298
+                self.expression()
+                self.state = 299
+                self.match(KQueryParser.Equal)
+                self.state = 300
+                self.expression()
                 pass
 
 
@@ -1381,11 +1811,11 @@ class KQueryParser ( Parser ):
     def bitwiseExpr(self):
 
         localctx = KQueryParser.BitwiseExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_bitwiseExpr)
+        self.enterRule(localctx, 28, self.RULE_bitwiseExpr)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 235
+            self.state = 304
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << KQueryParser.SHL) | (1 << KQueryParser.LSHR) | (1 << KQueryParser.ASHR) | (1 << KQueryParser.BITWISEAND) | (1 << KQueryParser.BITWISEOR) | (1 << KQueryParser.BITWISEXOR))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1461,11 +1891,11 @@ class KQueryParser ( Parser ):
     def comparisonExpr(self):
 
         localctx = KQueryParser.ComparisonExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_comparisonExpr)
+        self.enterRule(localctx, 30, self.RULE_comparisonExpr)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 237
+            self.state = 306
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << KQueryParser.EQ) | (1 << KQueryParser.NEQ) | (1 << KQueryParser.ULT) | (1 << KQueryParser.ULE) | (1 << KQueryParser.UGT) | (1 << KQueryParser.UGE) | (1 << KQueryParser.SLT) | (1 << KQueryParser.SLE) | (1 << KQueryParser.SGT) | (1 << KQueryParser.SGE))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1532,11 +1962,11 @@ class KQueryParser ( Parser ):
     def arithmeticExpr(self):
 
         localctx = KQueryParser.ArithmeticExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_arithmeticExpr)
+        self.enterRule(localctx, 32, self.RULE_arithmeticExpr)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 239
+            self.state = 308
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << KQueryParser.ADD) | (1 << KQueryParser.SUB) | (1 << KQueryParser.MUL) | (1 << KQueryParser.UDIV) | (1 << KQueryParser.UREM) | (1 << KQueryParser.SDIV) | (1 << KQueryParser.SREM))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1585,10 +2015,10 @@ class KQueryParser ( Parser ):
     def domain(self):
 
         localctx = KQueryParser.DomainContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_domain)
+        self.enterRule(localctx, 34, self.RULE_domain)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 241
+            self.state = 310
             self.match(KQueryParser.WidthType)
         except RecognitionException as re:
             localctx.exception = re
@@ -1632,10 +2062,10 @@ class KQueryParser ( Parser ):
     def rangeLimit(self):
 
         localctx = KQueryParser.RangeLimitContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_rangeLimit)
+        self.enterRule(localctx, 36, self.RULE_rangeLimit)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 243
+            self.state = 312
             self.match(KQueryParser.WidthType)
         except RecognitionException as re:
             localctx.exception = re
@@ -1679,10 +2109,10 @@ class KQueryParser ( Parser ):
     def arrName(self):
 
         localctx = KQueryParser.ArrNameContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_arrName)
+        self.enterRule(localctx, 38, self.RULE_arrName)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 245
+            self.state = 314
             self.match(KQueryParser.Identifier)
         except RecognitionException as re:
             localctx.exception = re
@@ -1703,9 +2133,6 @@ class KQueryParser ( Parser ):
         def number(self):
             return self.getTypedRuleContext(KQueryParser.NumberContext,0)
 
-
-        def COMMA(self):
-            return self.getToken(KQueryParser.COMMA, 0)
 
         def numberList(self):
             return self.getTypedRuleContext(KQueryParser.NumberListContext,0)
@@ -1734,24 +2161,22 @@ class KQueryParser ( Parser ):
     def numberList(self):
 
         localctx = KQueryParser.NumberListContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_numberList)
+        self.enterRule(localctx, 40, self.RULE_numberList)
         try:
-            self.state = 252
+            self.state = 320
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 247
+                self.state = 316
                 self.number()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 248
+                self.state = 317
                 self.number()
-                self.state = 249
-                self.match(KQueryParser.COMMA)
-                self.state = 250
+                self.state = 318
                 self.numberList()
                 pass
 
@@ -1807,326 +2232,17 @@ class KQueryParser ( Parser ):
     def number(self):
 
         localctx = KQueryParser.NumberContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 32, self.RULE_number)
+        self.enterRule(localctx, 42, self.RULE_number)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 254
+            self.state = 322
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << KQueryParser.SignedConstant) | (1 << KQueryParser.Constant) | (1 << KQueryParser.TrueMatch) | (1 << KQueryParser.FalseMatch))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class FloatingPointwidthTypeContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def FP(self):
-            return self.getToken(KQueryParser.FP, 0)
-
-        def Digit(self, i:int=None):
-            if i is None:
-                return self.getTokens(KQueryParser.Digit)
-            else:
-                return self.getToken(KQueryParser.Digit, i)
-
-        def getRuleIndex(self):
-            return KQueryParser.RULE_floatingPointwidthType
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFloatingPointwidthType" ):
-                listener.enterFloatingPointwidthType(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFloatingPointwidthType" ):
-                listener.exitFloatingPointwidthType(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFloatingPointwidthType" ):
-                return visitor.visitFloatingPointwidthType(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def floatingPointwidthType(self):
-
-        localctx = KQueryParser.FloatingPointwidthTypeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_floatingPointwidthType)
-        self._la = 0 # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 256
-            self.match(KQueryParser.FP)
-            self.state = 258 
-            self._errHandler.sync(self)
-            _alt = 1
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
-                    self.state = 257
-                    self.match(KQueryParser.Digit)
-
-                else:
-                    raise NoViableAltException(self)
-                self.state = 260 
-                self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,9,self._ctx)
-
-            self.state = 269
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << KQueryParser.SignedConstant) | (1 << KQueryParser.Constant) | (1 << KQueryParser.DecConstant) | (1 << KQueryParser.BinConstant) | (1 << KQueryParser.OctConstant) | (1 << KQueryParser.HexConstant) | (1 << KQueryParser.WidthType) | (1 << KQueryParser.BinId) | (1 << KQueryParser.OctId) | (1 << KQueryParser.HexId) | (1 << KQueryParser.TrueMatch) | (1 << KQueryParser.FalseMatch) | (1 << KQueryParser.Query) | (1 << KQueryParser.Array) | (1 << KQueryParser.Symbolic) | (1 << KQueryParser.Colon) | (1 << KQueryParser.Arrow) | (1 << KQueryParser.Equal) | (1 << KQueryParser.COMMA) | (1 << KQueryParser.NOT) | (1 << KQueryParser.SHL) | (1 << KQueryParser.LSHR) | (1 << KQueryParser.ASHR) | (1 << KQueryParser.CONCAT) | (1 << KQueryParser.EXTRACT) | (1 << KQueryParser.ZEXT) | (1 << KQueryParser.SEXT) | (1 << KQueryParser.READ) | (1 << KQueryParser.SELECT) | (1 << KQueryParser.NEGETION) | (1 << KQueryParser.READLSB) | (1 << KQueryParser.READMSB) | (1 << KQueryParser.PLUS) | (1 << KQueryParser.MINUS) | (1 << KQueryParser.INT) | (1 << KQueryParser.ATR) | (1 << KQueryParser.FP) | (1 << KQueryParser.BITWISEAND) | (1 << KQueryParser.BITWISEOR) | (1 << KQueryParser.BITWISEXOR) | (1 << KQueryParser.EQ) | (1 << KQueryParser.NEQ) | (1 << KQueryParser.ULT) | (1 << KQueryParser.ULE) | (1 << KQueryParser.UGT) | (1 << KQueryParser.UGE) | (1 << KQueryParser.SLT) | (1 << KQueryParser.SLE) | (1 << KQueryParser.SGT) | (1 << KQueryParser.SGE) | (1 << KQueryParser.ADD) | (1 << KQueryParser.SUB) | (1 << KQueryParser.MUL) | (1 << KQueryParser.UDIV) | (1 << KQueryParser.UREM) | (1 << KQueryParser.SDIV) | (1 << KQueryParser.SREM) | (1 << KQueryParser.Identifier) | (1 << KQueryParser.Digit) | (1 << KQueryParser.Whitespace) | (1 << KQueryParser.Newline) | (1 << KQueryParser.BlockComment) | (1 << KQueryParser.LineComment))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (KQueryParser.LeftParen - 64)) | (1 << (KQueryParser.RightParen - 64)) | (1 << (KQueryParser.LeftBracket - 64)) | (1 << (KQueryParser.RightBracket - 64)) | (1 << (KQueryParser.LeftBrace - 64)) | (1 << (KQueryParser.RightBrace - 64)))) != 0):
-                self.state = 262
-                self.matchWildcard()
-                self.state = 266
-                self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
-                while _alt!=1 and _alt!=ATN.INVALID_ALT_NUMBER:
-                    if _alt==1+1:
-                        self.state = 263
-                        self.matchWildcard() 
-                    self.state = 268
-                    self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
-
-
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class IntegerwidthTypeContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def INT(self):
-            return self.getToken(KQueryParser.INT, 0)
-
-        def Digit(self, i:int=None):
-            if i is None:
-                return self.getTokens(KQueryParser.Digit)
-            else:
-                return self.getToken(KQueryParser.Digit, i)
-
-        def getRuleIndex(self):
-            return KQueryParser.RULE_integerwidthType
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIntegerwidthType" ):
-                listener.enterIntegerwidthType(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIntegerwidthType" ):
-                listener.exitIntegerwidthType(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitIntegerwidthType" ):
-                return visitor.visitIntegerwidthType(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def integerwidthType(self):
-
-        localctx = KQueryParser.IntegerwidthTypeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 36, self.RULE_integerwidthType)
-        self._la = 0 # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 271
-            self.match(KQueryParser.INT)
-            self.state = 273 
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while True:
-                self.state = 272
-                self.match(KQueryParser.Digit)
-                self.state = 275 
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if not (_la==KQueryParser.Digit):
-                    break
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class VersionContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def Identifier(self):
-            return self.getToken(KQueryParser.Identifier, 0)
-
-        def LeftBracket(self):
-            return self.getToken(KQueryParser.LeftBracket, 0)
-
-        def RightBracket(self):
-            return self.getToken(KQueryParser.RightBracket, 0)
-
-        def ATR(self):
-            return self.getToken(KQueryParser.ATR, 0)
-
-        def version(self):
-            return self.getTypedRuleContext(KQueryParser.VersionContext,0)
-
-
-        def updateList(self):
-            return self.getTypedRuleContext(KQueryParser.UpdateListContext,0)
-
-
-        def getRuleIndex(self):
-            return KQueryParser.RULE_version
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVersion" ):
-                listener.enterVersion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVersion" ):
-                listener.exitVersion(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitVersion" ):
-                return visitor.visitVersion(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def version(self):
-
-        localctx = KQueryParser.VersionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 38, self.RULE_version)
-        try:
-            self.state = 284
-            self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [KQueryParser.Identifier]:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 277
-                self.match(KQueryParser.Identifier)
-                pass
-            elif token in [KQueryParser.LeftBracket]:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 278
-                self.match(KQueryParser.LeftBracket)
-
-                self.state = 279
-                self.updateList()
-                self.state = 280
-                self.match(KQueryParser.RightBracket)
-                self.state = 281
-                self.match(KQueryParser.ATR)
-                self.state = 282
-                self.version()
-                pass
-            else:
-                raise NoViableAltException(self)
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class UpdateListContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def expression(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(KQueryParser.ExpressionContext)
-            else:
-                return self.getTypedRuleContext(KQueryParser.ExpressionContext,i)
-
-
-        def Equal(self):
-            return self.getToken(KQueryParser.Equal, 0)
-
-        def COMMA(self):
-            return self.getToken(KQueryParser.COMMA, 0)
-
-        def updateList(self):
-            return self.getTypedRuleContext(KQueryParser.UpdateListContext,0)
-
-
-        def getRuleIndex(self):
-            return KQueryParser.RULE_updateList
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUpdateList" ):
-                listener.enterUpdateList(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUpdateList" ):
-                listener.exitUpdateList(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitUpdateList" ):
-                return visitor.visitUpdateList(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def updateList(self):
-
-        localctx = KQueryParser.UpdateListContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 40, self.RULE_updateList)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 286
-            self.expression()
-            self.state = 287
-            self.match(KQueryParser.Equal)
-            self.state = 288
-            self.expression()
-
-            self.state = 289
-            self.match(KQueryParser.COMMA)
-            self.state = 290
-            self.updateList()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
