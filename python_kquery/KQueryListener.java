@@ -17,6 +17,16 @@ public interface KQueryListener extends ParseTreeListener {
 	 */
 	void exitKqueryExpression(KQueryParser.KqueryExpressionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link KQueryParser#queryStatements}.
+	 * @param ctx the parse tree
+	 */
+	void enterQueryStatements(KQueryParser.QueryStatementsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KQueryParser#queryStatements}.
+	 * @param ctx the parse tree
+	 */
+	void exitQueryStatements(KQueryParser.QueryStatementsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link KQueryParser#ktranslationUnit}.
 	 * @param ctx the parse tree
 	 */
@@ -66,6 +76,26 @@ public interface KQueryListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEvalArrayList(KQueryParser.EvalArrayListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KQueryParser#expressionList}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpressionList(KQueryParser.ExpressionListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KQueryParser#expressionList}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpressionList(KQueryParser.ExpressionListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KQueryParser#identifierList}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentifierList(KQueryParser.IdentifierListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KQueryParser#identifierList}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentifierList(KQueryParser.IdentifierListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link KQueryParser#arrayDeclaration}.
 	 * @param ctx the parse tree

@@ -17,6 +17,15 @@ class KQueryListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by KQueryParser#queryStatements.
+    def enterQueryStatements(self, ctx:KQueryParser.QueryStatementsContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#queryStatements.
+    def exitQueryStatements(self, ctx:KQueryParser.QueryStatementsContext):
+        pass
+
+
     # Enter a parse tree produced by KQueryParser#ktranslationUnit.
     def enterKtranslationUnit(self, ctx:KQueryParser.KtranslationUnitContext):
         pass
@@ -62,6 +71,24 @@ class KQueryListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by KQueryParser#expressionList.
+    def enterExpressionList(self, ctx:KQueryParser.ExpressionListContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#expressionList.
+    def exitExpressionList(self, ctx:KQueryParser.ExpressionListContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#identifierList.
+    def enterIdentifierList(self, ctx:KQueryParser.IdentifierListContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#identifierList.
+    def exitIdentifierList(self, ctx:KQueryParser.IdentifierListContext):
+        pass
+
+
     # Enter a parse tree produced by KQueryParser#arrayDeclaration.
     def enterArrayDeclaration(self, ctx:KQueryParser.ArrayDeclarationContext):
         pass
@@ -71,12 +98,12 @@ class KQueryListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by KQueryParser#arrayElemsStub.
-    def enterArrayElemsStub(self, ctx:KQueryParser.ArrayElemsStubContext):
+    # Enter a parse tree produced by KQueryParser#numArrayElements.
+    def enterNumArrayElements(self, ctx:KQueryParser.NumArrayElementsContext):
         pass
 
-    # Exit a parse tree produced by KQueryParser#arrayElemsStub.
-    def exitArrayElemsStub(self, ctx:KQueryParser.ArrayElemsStubContext):
+    # Exit a parse tree produced by KQueryParser#numArrayElements.
+    def exitNumArrayElements(self, ctx:KQueryParser.NumArrayElementsContext):
         pass
 
 
@@ -98,6 +125,24 @@ class KQueryListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by KQueryParser#genericBitRead.
+    def enterGenericBitRead(self, ctx:KQueryParser.GenericBitReadContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#genericBitRead.
+    def exitGenericBitRead(self, ctx:KQueryParser.GenericBitReadContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#bitExtractExpr.
+    def enterBitExtractExpr(self, ctx:KQueryParser.BitExtractExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#bitExtractExpr.
+    def exitBitExtractExpr(self, ctx:KQueryParser.BitExtractExprContext):
+        pass
+
+
     # Enter a parse tree produced by KQueryParser#version.
     def enterVersion(self, ctx:KQueryParser.VersionContext):
         pass
@@ -107,12 +152,84 @@ class KQueryListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by KQueryParser#fullyQualifiedExpression.
+    def enterFullyQualifiedExpression(self, ctx:KQueryParser.FullyQualifiedExpressionContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#fullyQualifiedExpression.
+    def exitFullyQualifiedExpression(self, ctx:KQueryParser.FullyQualifiedExpressionContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#notExpr.
+    def enterNotExpr(self, ctx:KQueryParser.NotExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#notExpr.
+    def exitNotExpr(self, ctx:KQueryParser.NotExprContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#concatExpr.
+    def enterConcatExpr(self, ctx:KQueryParser.ConcatExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#concatExpr.
+    def exitConcatExpr(self, ctx:KQueryParser.ConcatExprContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#exprNegation.
+    def enterExprNegation(self, ctx:KQueryParser.ExprNegationContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#exprNegation.
+    def exitExprNegation(self, ctx:KQueryParser.ExprNegationContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#selectExpr.
+    def enterSelectExpr(self, ctx:KQueryParser.SelectExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#selectExpr.
+    def exitSelectExpr(self, ctx:KQueryParser.SelectExprContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#arrExtractExpr.
+    def enterArrExtractExpr(self, ctx:KQueryParser.ArrExtractExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#arrExtractExpr.
+    def exitArrExtractExpr(self, ctx:KQueryParser.ArrExtractExprContext):
+        pass
+
+
     # Enter a parse tree produced by KQueryParser#varName.
     def enterVarName(self, ctx:KQueryParser.VarNameContext):
         pass
 
     # Exit a parse tree produced by KQueryParser#varName.
     def exitVarName(self, ctx:KQueryParser.VarNameContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#leftExpr.
+    def enterLeftExpr(self, ctx:KQueryParser.LeftExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#leftExpr.
+    def exitLeftExpr(self, ctx:KQueryParser.LeftExprContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#rightExpr.
+    def enterRightExpr(self, ctx:KQueryParser.RightExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#rightExpr.
+    def exitRightExpr(self, ctx:KQueryParser.RightExprContext):
         pass
 
 
@@ -203,6 +320,42 @@ class KQueryListener(ParseTreeListener):
 
     # Exit a parse tree produced by KQueryParser#number.
     def exitNumber(self, ctx:KQueryParser.NumberContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#constant.
+    def enterConstant(self, ctx:KQueryParser.ConstantContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#constant.
+    def exitConstant(self, ctx:KQueryParser.ConstantContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#boolnum.
+    def enterBoolnum(self, ctx:KQueryParser.BoolnumContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#boolnum.
+    def exitBoolnum(self, ctx:KQueryParser.BoolnumContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#signedConstant.
+    def enterSignedConstant(self, ctx:KQueryParser.SignedConstantContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#signedConstant.
+    def exitSignedConstant(self, ctx:KQueryParser.SignedConstantContext):
+        pass
+
+
+    # Enter a parse tree produced by KQueryParser#widthOrSizeExpr.
+    def enterWidthOrSizeExpr(self, ctx:KQueryParser.WidthOrSizeExprContext):
+        pass
+
+    # Exit a parse tree produced by KQueryParser#widthOrSizeExpr.
+    def exitWidthOrSizeExpr(self, ctx:KQueryParser.WidthOrSizeExprContext):
         pass
 
 

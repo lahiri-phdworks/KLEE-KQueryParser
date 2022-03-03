@@ -14,6 +14,11 @@ class KQueryVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by KQueryParser#queryStatements.
+    def visitQueryStatements(self, ctx:KQueryParser.QueryStatementsContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by KQueryParser#ktranslationUnit.
     def visitKtranslationUnit(self, ctx:KQueryParser.KtranslationUnitContext):
         return self.visitChildren(ctx)
@@ -39,13 +44,23 @@ class KQueryVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by KQueryParser#expressionList.
+    def visitExpressionList(self, ctx:KQueryParser.ExpressionListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#identifierList.
+    def visitIdentifierList(self, ctx:KQueryParser.IdentifierListContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by KQueryParser#arrayDeclaration.
     def visitArrayDeclaration(self, ctx:KQueryParser.ArrayDeclarationContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by KQueryParser#arrayElemsStub.
-    def visitArrayElemsStub(self, ctx:KQueryParser.ArrayElemsStubContext):
+    # Visit a parse tree produced by KQueryParser#numArrayElements.
+    def visitNumArrayElements(self, ctx:KQueryParser.NumArrayElementsContext):
         return self.visitChildren(ctx)
 
 
@@ -59,13 +74,63 @@ class KQueryVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by KQueryParser#genericBitRead.
+    def visitGenericBitRead(self, ctx:KQueryParser.GenericBitReadContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#bitExtractExpr.
+    def visitBitExtractExpr(self, ctx:KQueryParser.BitExtractExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by KQueryParser#version.
     def visitVersion(self, ctx:KQueryParser.VersionContext):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by KQueryParser#fullyQualifiedExpression.
+    def visitFullyQualifiedExpression(self, ctx:KQueryParser.FullyQualifiedExpressionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#notExpr.
+    def visitNotExpr(self, ctx:KQueryParser.NotExprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#concatExpr.
+    def visitConcatExpr(self, ctx:KQueryParser.ConcatExprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#exprNegation.
+    def visitExprNegation(self, ctx:KQueryParser.ExprNegationContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#selectExpr.
+    def visitSelectExpr(self, ctx:KQueryParser.SelectExprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#arrExtractExpr.
+    def visitArrExtractExpr(self, ctx:KQueryParser.ArrExtractExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by KQueryParser#varName.
     def visitVarName(self, ctx:KQueryParser.VarNameContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#leftExpr.
+    def visitLeftExpr(self, ctx:KQueryParser.LeftExprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#rightExpr.
+    def visitRightExpr(self, ctx:KQueryParser.RightExprContext):
         return self.visitChildren(ctx)
 
 
@@ -116,6 +181,26 @@ class KQueryVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by KQueryParser#number.
     def visitNumber(self, ctx:KQueryParser.NumberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#constant.
+    def visitConstant(self, ctx:KQueryParser.ConstantContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#boolnum.
+    def visitBoolnum(self, ctx:KQueryParser.BoolnumContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#signedConstant.
+    def visitSignedConstant(self, ctx:KQueryParser.SignedConstantContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by KQueryParser#widthOrSizeExpr.
+    def visitWidthOrSizeExpr(self, ctx:KQueryParser.WidthOrSizeExprContext):
         return self.visitChildren(ctx)
 
 

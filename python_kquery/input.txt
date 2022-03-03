@@ -1,4 +1,4 @@
-array const_arr1[23] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array const_arr1[23] : w32 -> w8 = [12 34 45 56 67 67 87 65 455 465 65 34 345 655 5 43 554 35 5]
 array f[1] : w32 -> w8 = symbolic
 array f_1[1] : w32 -> w8 = symbolic
 array f_10[1] : w32 -> w8 = symbolic

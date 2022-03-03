@@ -27,6 +27,18 @@ public class KQueryBaseListener implements KQueryListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterQueryStatements(KQueryParser.QueryStatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitQueryStatements(KQueryParser.QueryStatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterKtranslationUnit(KQueryParser.KtranslationUnitContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -82,6 +94,30 @@ public class KQueryBaseListener implements KQueryListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitEvalArrayList(KQueryParser.EvalArrayListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExpressionList(KQueryParser.ExpressionListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpressionList(KQueryParser.ExpressionListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIdentifierList(KQueryParser.IdentifierListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIdentifierList(KQueryParser.IdentifierListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

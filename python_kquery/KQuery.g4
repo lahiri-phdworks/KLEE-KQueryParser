@@ -1,36 +1,15 @@
-/*
-     [The "BSD licence"]
-     Copyright (c) 2013 Sam Harwell
-     All rights reserved.
-     Redistribution and use in source and binary forms, with or without
-     modification, are permitted provided that the following conditions
-     are met:
-     1. Redistributions of source code must retain the above copyright
-        notice, this list of conditions and the following disclaimer.
-     2. Redistributions in binary form must reproduce the above copyright
-        notice, this list of conditions and the following disclaimer in the
-        documentation and/or other materials provided with the distribution.
-     3. The name of the author may not be used to endorse or promote products
-        derived from this software without specific prior written permission.
-     THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-     IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-     OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-     IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-     INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-     NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-     DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-     THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-     (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-     THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
-// Grammar for KLEE KQuery parsing -- lahiri-phdworks.
+// Grammar for KLEE KQuery parsing. (A bit more verbose with richer parsing)
+// Ported to Antlr4 by Sumit Lahiri.
 grammar KQuery;
 
 kqueryExpression 
-    : ktranslationUnit* EOF
+    : queryStatements EOF
     ;
 
+queryStatements
+    : (ktranslationUnit)*
+    ;
+    
 ktranslationUnit
     : arrayDeclaration
     | queryCommand
@@ -47,12 +26,15 @@ queryExpr
     ;
     
 evalExprList 
-    : LeftBracket expression* RightBracket  
+    : LeftBracket expressionList RightBracket  
     ;
-    
+
 evalArrayList 
-    : LeftBracket Identifier* RightBracket  
+    : LeftBracket identifierList RightBracket  
     ;
+
+expressionList : (expression)*;
+identifierList : (Identifier)*;
 
 arrayDeclaration
     : Array arrName LeftBracket numArrayElements RightBracket 
@@ -128,7 +110,6 @@ selectExpr
     : SELECT
     ;
 
-
 arrExtractExpr
     : EXTRACT
     ;
@@ -194,7 +175,7 @@ numberList
     : number
     | number numberList
     ;
-
+    
 number 
     : boolnum 
     | signedConstant
@@ -222,15 +203,15 @@ Constant
     ;
     
 BinConstant 
-    : BinId BIN_DIGIT+  
+    : BinId (BIN_DIGIT)+  
     ;
     
 OctConstant 
-    : OctId OCTAL_DIGIT+  
+    : OctId (OCTAL_DIGIT)+  
     ;
     
 HexConstant 
-    : HexId HEX_DIGIT+
+    : HexId (HEX_DIGIT)+
     ;
 
 FloatingPointType 
@@ -238,7 +219,7 @@ FloatingPointType
     ;
     
 IntegerType 
-    : INT DIGIT+
+    : INT (DIGIT)+
     ;
 
 widthOrSizeExpr
@@ -246,7 +227,7 @@ widthOrSizeExpr
     ;
 
 WidthType 
-    : WIDTH DIGIT+
+    : WIDTH (DIGIT)+
     ;
     
 BinId : '0b';
