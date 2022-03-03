@@ -327,6 +327,36 @@ public interface KQueryListener extends ParseTreeListener {
 	 */
 	void exitNumber(KQueryParser.NumberContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link KQueryParser#constant}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstant(KQueryParser.ConstantContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KQueryParser#constant}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstant(KQueryParser.ConstantContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KQueryParser#boolnum}.
+	 * @param ctx the parse tree
+	 */
+	void enterBoolnum(KQueryParser.BoolnumContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KQueryParser#boolnum}.
+	 * @param ctx the parse tree
+	 */
+	void exitBoolnum(KQueryParser.BoolnumContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KQueryParser#signedConstant}.
+	 * @param ctx the parse tree
+	 */
+	void enterSignedConstant(KQueryParser.SignedConstantContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KQueryParser#signedConstant}.
+	 * @param ctx the parse tree
+	 */
+	void exitSignedConstant(KQueryParser.SignedConstantContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link KQueryParser#widthOrSizeExpr}.
 	 * @param ctx the parse tree
 	 */

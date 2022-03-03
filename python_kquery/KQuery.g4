@@ -196,10 +196,18 @@ numberList
     ;
 
 number 
-    : TrueMatch 
-    | FalseMatch 
-    | SignedConstant
-    | Constant
+    : boolnum 
+    | signedConstant
+    | constant
+    ;
+
+constant: Constant;
+boolnum: Boolean;
+signedConstant: SignedConstant;
+
+Boolean
+    : TrueMatch
+    | FalseMatch
     ;
     
 SignedConstant 
@@ -269,7 +277,6 @@ READLSB: 'ReadLSB';
 READMSB: 'ReadMSB';
 PLUS : '+';
 MINUS : '-';
-INT : 'i';
 ATR : '@';
 FP : 'fp';
 BITWISEAND : 'And';
@@ -317,6 +324,8 @@ Identifier
     :  ('a'..'z' | 'A'..'Z' | '_')('a'..'z' | 'A'..'Z' | '_' | '0'..'9' | '.' )*
     ;
     
+INT : 'i';
+
 Whitespace
     :   [ \t]+ -> skip
     ;
