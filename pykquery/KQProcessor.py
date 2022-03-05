@@ -67,26 +67,36 @@ class OverridenVisitor(KQueryVisitor):
 
     # Visit a parse tree produced by KQueryParser#queryCommand.
     def visitQueryCommand(self, ctx:KQueryParser.QueryCommandContext):
+        if ctx.evalExprList():
+            print(f">>> Query EvalExprList : {ctx.evalExprList().getText()}")
+        if ctx.queryExpr():
+            print(f">>> Query queryExpr : {ctx.queryExpr().getText()}")
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by KQueryParser#SingletonQueryExpr.
     def visitSingletonQueryExpr(self, ctx:KQueryParser.SingletonQueryExprContext):
+        print(f">>> Singleton : {ctx.getText()}")
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by KQueryParser#WithEvalExpr.
     def visitWithEvalExpr(self, ctx:KQueryParser.WithEvalExprContext):
+        print(f">>> WithEvalExpr : {ctx.getText()}")
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by KQueryParser#WithEvalExprAndArrayList.
     def visitWithEvalExprAndArrayList(self, ctx:KQueryParser.WithEvalExprAndArrayListContext):
+        print(f">>> EvalExprAndArray : {ctx.getText()}")
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by KQueryParser#evalExprList.
     def visitEvalExprList(self, ctx:KQueryParser.EvalExprListContext):
+        if ctx.expressionList():
+            print(">>> ExpressionList : ")
+            self.visit(ctx.expressionList())
         return self.visitChildren(ctx)
 
 
@@ -97,6 +107,8 @@ class OverridenVisitor(KQueryVisitor):
 
     # Visit a parse tree produced by KQueryParser#expressionList.
     def visitExpressionList(self, ctx:KQueryParser.ExpressionListContext):
+        for expr in ctx.expression():
+            print(f"\t\t>>> {expr.getText()}")
         return self.visitChildren(ctx)
 
 
@@ -145,8 +157,46 @@ class OverridenVisitor(KQueryVisitor):
         return self.visitChildren(ctx)
 
 
+    def BinaryVisitor(self, ctx):
+        if (ctx.leftExpr()):
+            print("\t>>> Visiting Left Expression")
+            self.visit(ctx.leftExpr())
+        if (ctx.rightExpr()):
+            print("\t>>> Visiting Right Expression")
+            self.visit(ctx.rightExpr())
+
     # Visit a parse tree produced by KQueryParser#CompExpr.
     def visitCompExpr(self, ctx:KQueryParser.CompExprContext):
+        if (ctx.comparisonExpr().getText() == "Eq"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Ne"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Ult"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Ule"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Ugt"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Uge"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Slt"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Sle"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Sgt"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
+        if (ctx.comparisonExpr().getText() == "Sge"):
+            print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
+            self.BinaryVisitor(ctx)
         return self.visitChildren(ctx)
 
 
@@ -267,18 +317,18 @@ class OverridenVisitor(KQueryVisitor):
 
     # Visit a parse tree produced by KQueryParser#leftExpr.
     def visitLeftExpr(self, ctx:KQueryParser.LeftExprContext):
-        return self.visitChildren(ctx)
-
+        if (ctx.expression()):
+            self.visit(ctx.expression())
 
     # Visit a parse tree produced by KQueryParser#rightExpr.
     def visitRightExpr(self, ctx:KQueryParser.RightExprContext):
-        return self.visitChildren(ctx)
-
+        if (ctx.expression()):
+            self.visit(ctx.expression())
 
     # Visit a parse tree produced by KQueryParser#namedConstant.
     def visitNamedConstant(self, ctx:KQueryParser.NamedConstantContext):
-        return self.visitChildren(ctx)
-
+        if (ctx.Identifier()):
+            print(f"\t\t>>> Named Const : {ctx.Identifier().getText()}")
 
     # Visit a parse tree produced by KQueryParser#updateList.
     def visitUpdateList(self, ctx:KQueryParser.UpdateListContext):
