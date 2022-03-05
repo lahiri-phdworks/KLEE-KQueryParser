@@ -97,8 +97,6 @@ class OverridenVisitor(KQueryVisitor):
         if ctx.expressionList():
             print(">>> ExpressionList : ")
             self.visit(ctx.expressionList())
-        return self.visitChildren(ctx)
-
 
     # Visit a parse tree produced by KQueryParser#evalArrayList.
     def visitEvalArrayList(self, ctx:KQueryParser.EvalArrayListContext):
@@ -109,8 +107,7 @@ class OverridenVisitor(KQueryVisitor):
     def visitExpressionList(self, ctx:KQueryParser.ExpressionListContext):
         for expr in ctx.expression():
             print(f"\t\t>>> {expr.getText()}")
-        return self.visitChildren(ctx)
-
+            self.visit(expr)
 
     # Visit a parse tree produced by KQueryParser#identifierList.
     def visitIdentifierList(self, ctx:KQueryParser.IdentifierListContext):
@@ -129,8 +126,10 @@ class OverridenVisitor(KQueryVisitor):
 
     # Visit a parse tree produced by KQueryParser#NamedAbbreviation.
     def visitNamedAbbreviation(self, ctx:KQueryParser.NamedAbbreviationContext):
-        return self.visitChildren(ctx)
-
+        if (ctx.namedConstant()):
+            self.visit(ctx.namedConstant())
+        if (ctx.expression()):
+            self.visit(ctx.expression())
 
     # Visit a parse tree produced by KQueryParser#SizeQuery.
     def visitSizeQuery(self, ctx:KQueryParser.SizeQueryContext):
@@ -197,8 +196,6 @@ class OverridenVisitor(KQueryVisitor):
         if (ctx.comparisonExpr().getText() == "Sge"):
             print(f"\tVisiting : {ctx.comparisonExpr().getText()}")
             self.BinaryVisitor(ctx)
-        return self.visitChildren(ctx)
-
 
     # Visit a parse tree produced by KQueryParser#ConcatExprWidth.
     def visitConcatExprWidth(self, ctx:KQueryParser.ConcatExprWidthContext):
@@ -327,8 +324,7 @@ class OverridenVisitor(KQueryVisitor):
 
     # Visit a parse tree produced by KQueryParser#namedConstant.
     def visitNamedConstant(self, ctx:KQueryParser.NamedConstantContext):
-        if (ctx.Identifier()):
-            print(f"\t\t>>> Named Const : {ctx.Identifier().getText()}")
+        return ctx.Identifier().getText()
 
     # Visit a parse tree produced by KQueryParser#updateList.
     def visitUpdateList(self, ctx:KQueryParser.UpdateListContext):
