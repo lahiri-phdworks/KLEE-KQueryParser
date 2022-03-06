@@ -6,4 +6,4 @@ cd ..
 
 cd pykquery
 echo " ==== Parsing Example ==== "
-python3 KQProcessor.py ../examples/test1.kquery
+python3 kquery2z3.py ../examples/test1.kquery

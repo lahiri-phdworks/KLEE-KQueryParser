@@ -1,0 +1,58 @@
+array const_arr1[10] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0]
+array fsym0[1] : w32 -> w8 = symbolic
+array fsym1[1] : w32 -> w8 = symbolic
+array fsym2[1] : w32 -> w8 = symbolic
+array fsym3[1] : w32 -> w8 = symbolic
+array fsym4[1] : w32 -> w8 = symbolic
+array fsym5[1] : w32 -> w8 = symbolic
+array fsym6[1] : w32 -> w8 = symbolic
+array fsym7[1] : w32 -> w8 = symbolic
+array fsym8[1] : w32 -> w8 = symbolic
+array fsym9[1] : w32 -> w8 = symbolic
+array i[1] : w32 -> w8 = symbolic
+array x[8] : w32 -> w8 = symbolic
+(query [(Eq false
+             (Slt N0:(ZExt w32 N1:(Read w8 0 fsym1))
+                  (ZExt w32 N2:(Read w8 0 fsym0))))
+         (Slt N3:(ZExt w32 N4:(Read w8 0 fsym2))
+              N0)
+         (Eq false
+             (Slt N5:(ZExt w32 N6:(Read w8 0 fsym3))
+                  N3))
+         (Slt N7:(ZExt w32 N8:(Read w8 0 fsym4))
+              N5)
+         (Slt N9:(ZExt w32 N10:(Read w8 0 fsym5))
+              N7)
+         (Eq false
+             (Slt N11:(ZExt w32 N12:(Read w8 0 fsym6))
+                  N9))
+         (Eq false
+             (Slt N13:(ZExt w32 N14:(Read w8 0 fsym7))
+                  N11))
+         (Slt N15:(ZExt w32 N16:(Read w8 0 fsym8))
+              N13)
+         (Eq false
+             (Slt (ZExt w32 N17:(Read w8 0 fsym9))
+                  N15))
+         (Eq 4
+             (ReadLSB w64 0 x))
+         (Sle 0
+              N18:(ZExt w32 N19:(Read w8 0 i)))
+         (Sle N18 9)
+         (Eq false (Sle N18 5))
+         (Eq false
+             (Slt N20:(ZExt w32 (Read w8 (Extract w32 0 (ZExt w64 N19))
+                                         [9=N17,
+                                          8=N16,
+                                          7=N14,
+                                          6=N12,
+                                          5=N10,
+                                          4=N8,
+                                          3=N6,
+                                          2=N4,
+                                          1=N1,
+                                          0=N2] @ const_arr1))
+                  N9))
+         (Sle N18 8)
+         (Slt N15 N20)]
+        false)

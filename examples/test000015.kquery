@@ -1,0 +1,35 @@
+array fsym0[1] : w32 -> w8 = symbolic
+array fsym1[1] : w32 -> w8 = symbolic
+array fsym2[1] : w32 -> w8 = symbolic
+array fsym3[1] : w32 -> w8 = symbolic
+array fsym4[1] : w32 -> w8 = symbolic
+array fsym5[1] : w32 -> w8 = symbolic
+array fsym6[1] : w32 -> w8 = symbolic
+array i[1] : w32 -> w8 = symbolic
+array x[8] : w32 -> w8 = symbolic
+(query [(Eq false
+             (Slt N0:(ZExt w32 (Read w8 0 fsym1))
+                  (ZExt w32 (Read w8 0 fsym0))))
+         (Eq false
+             (Slt N1:(ZExt w32 (Read w8 0 fsym2))
+                  N0))
+         (Eq false
+             (Slt N2:(ZExt w32 (Read w8 0 fsym3))
+                  N1))
+         (Eq false
+             (Slt N3:(ZExt w32 (Read w8 0 fsym4))
+                  N2))
+         (Slt N4:(ZExt w32 (Read w8 0 fsym5))
+              N3)
+         (Eq false
+             (Slt (ZExt w32 (Read w8 0 fsym6))
+                  N4))
+         (Eq 1
+             (ReadLSB w64 0 x))
+         (Sle 0
+              N5:(ZExt w32 (Read w8 0 i)))
+         (Sle N5 6)
+         (Sle N5 3)
+         (Sle N5 2)
+         (Sle N5 1)]
+        false)

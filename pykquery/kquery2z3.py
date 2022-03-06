@@ -6,6 +6,8 @@ from KQueryParser import KQueryParser
 from KQueryVisitor import KQueryVisitor
 numbersList = []
 
+solverInstance = z3.Solver()
+
 class OverridenVisitor(KQueryVisitor):
     def visitKqueryExpression(self, ctx:KQueryParser.KqueryExpressionContext):
         statements = self.visit(ctx.queryStatements())

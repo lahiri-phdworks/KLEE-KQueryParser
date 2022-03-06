@@ -1,0 +1,34 @@
+array arr[1] : w32 -> w8 = symbolic
+array arr_1[1] : w32 -> w8 = symbolic
+array arr_2[1] : w32 -> w8 = symbolic
+array arr_3[1] : w32 -> w8 = symbolic
+array const_arr1[4] : w32 -> w8 = [0 0 0 0]
+array pivot03[4] : w32 -> w8 = symbolic
+array pivot13[4] : w32 -> w8 = symbolic
+(query [(Sle 0
+              N0:(ReadLSB w32 0 pivot03))
+         (Sle N0 3)
+         (Eq false
+             (Sle (ZExt w32 N1:(Read w8 0 U0:[N2:(Extract w32 0 (SExt w64 N0))=N3:(Read w8 0 arr_3)] @
+                                          U1:[3=N3,
+                                              2=(Read w8 0 arr_2),
+                                              1=(Read w8 0 arr_1),
+                                              0=(Read w8 0 arr)] @ const_arr1))
+                  N4:(ZExt w32 N5:(Read w8 N2 U1))))
+         (Eq false
+             (Sle (ZExt w32 (Read w8 1 U0))
+                  N4))
+         (Eq false
+             (Sle (ZExt w32 (Read w8 2 U0))
+                  N4))
+         (Sle 1
+              N6:(ReadLSB w32 0 pivot13))
+         (Sle N6 3)
+         (Eq false
+             (Sle (ZExt w32 (Read w8 1 U2:[N7:(Extract w32 0 (SExt w64 N6))=N1] @
+                                       U3:[3=N1,
+                                           0=N5] @ U0))
+                  N8:(ZExt w32 (Read w8 N7 U3))))
+         (Sle (ZExt w32 (Read w8 2 U2))
+              N8)]
+        false)
