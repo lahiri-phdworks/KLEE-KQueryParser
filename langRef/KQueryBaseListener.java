@@ -63,37 +63,13 @@ public class KQueryBaseListener implements KQueryListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSingletonQueryExpr(KQueryParser.SingletonQueryExprContext ctx) { }
+	@Override public void enterQueryExpr(KQueryParser.QueryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSingletonQueryExpr(KQueryParser.SingletonQueryExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterWithEvalExpr(KQueryParser.WithEvalExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitWithEvalExpr(KQueryParser.WithEvalExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterWithEvalExprAndArrayList(KQueryParser.WithEvalExprAndArrayListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitWithEvalExprAndArrayList(KQueryParser.WithEvalExprAndArrayListContext ctx) { }
+	@Override public void exitQueryExpr(KQueryParser.QueryExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -267,18 +243,6 @@ public class KQueryBaseListener implements KQueryListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompExpr(KQueryParser.CompExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCompExpr(KQueryParser.CompExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterConcatExprWidth(KQueryParser.ConcatExprWidthContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -286,18 +250,6 @@ public class KQueryBaseListener implements KQueryListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConcatExprWidth(KQueryParser.ConcatExprWidthContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterConcatExprNW(KQueryParser.ConcatExprNWContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitConcatExprNW(KQueryParser.ConcatExprNWContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -363,30 +315,6 @@ public class KQueryBaseListener implements KQueryListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNegetionExpr(KQueryParser.NegetionExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNegetionExpr(KQueryParser.NegetionExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterReadExpr(KQueryParser.ReadExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitReadExpr(KQueryParser.ReadExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterVersionExpr(KQueryParser.VersionExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -447,18 +375,6 @@ public class KQueryBaseListener implements KQueryListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVersionedNamedAbbreviation(KQueryParser.VersionedNamedAbbreviationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVersionedNamedAbbreviation(KQueryParser.VersionedNamedAbbreviationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterUpdationList(KQueryParser.UpdationListContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -466,18 +382,6 @@ public class KQueryBaseListener implements KQueryListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitUpdationList(KQueryParser.UpdationListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNoUpdateList(KQueryParser.NoUpdateListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNoUpdateList(KQueryParser.NoUpdateListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -574,18 +478,6 @@ public class KQueryBaseListener implements KQueryListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitRightExpr(KQueryParser.RightExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNamedConstant(KQueryParser.NamedConstantContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNamedConstant(KQueryParser.NamedConstantContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

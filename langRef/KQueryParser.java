@@ -21,12 +21,12 @@ public class KQueryParser extends Parser {
 		OctId=11, WIDTH=12, HexId=13, TrueMatch=14, FalseMatch=15, Query=16, Array=17, 
 		Symbolic=18, Colon=19, Arrow=20, Equal=21, COMMA=22, NOT=23, SHL=24, LSHR=25, 
 		ASHR=26, CONCAT=27, EXTRACT=28, ZEXT=29, SEXT=30, READ=31, SELECT=32, 
-		NEGETION=33, READLSB=34, READMSB=35, PLUS=36, MINUS=37, ATR=38, FP=39, 
-		BITWISEAND=40, BITWISEOR=41, BITWISEXOR=42, EQ=43, NEQ=44, ULT=45, ULE=46, 
-		UGT=47, UGE=48, SLT=49, SLE=50, SGT=51, SGE=52, ADD=53, SUB=54, MUL=55, 
-		UDIV=56, UREM=57, SDIV=58, SREM=59, Identifier=60, INT=61, Whitespace=62, 
-		Newline=63, BlockComment=64, LineComment=65, LeftParen=66, RightParen=67, 
-		LeftBracket=68, RightBracket=69, LeftBrace=70, RightBrace=71;
+		NEGETION=33, READLSB=34, READMSB=35, PLUS=36, MINUS=37, ATR=38, BITWISEAND=39, 
+		BITWISEOR=40, BITWISEXOR=41, EQ=42, NEQ=43, ULT=44, ULE=45, UGT=46, UGE=47, 
+		SLT=48, SLE=49, SGT=50, SGE=51, ADD=52, SUB=53, MUL=54, UDIV=55, UREM=56, 
+		SDIV=57, SREM=58, Identifier=59, INT=60, FP=61, Whitespace=62, Newline=63, 
+		BlockComment=64, LineComment=65, LeftParen=66, RightParen=67, LeftBracket=68, 
+		RightBracket=69, LeftBrace=70, RightBrace=71;
 	public static final int
 		RULE_kqueryExpression = 0, RULE_queryStatements = 1, RULE_ktranslationUnit = 2, 
 		RULE_queryCommand = 3, RULE_queryExpr = 4, RULE_evalExprList = 5, RULE_evalArrayList = 6, 
@@ -35,10 +35,10 @@ public class KQueryParser extends Parser {
 		RULE_genericBitRead = 13, RULE_bitExtractExpr = 14, RULE_version = 15, 
 		RULE_notExpr = 16, RULE_concatExpr = 17, RULE_exprNegation = 18, RULE_selectExpr = 19, 
 		RULE_arrExtractExpr = 20, RULE_varName = 21, RULE_leftExpr = 22, RULE_rightExpr = 23, 
-		RULE_namedConstant = 24, RULE_updateList = 25, RULE_bitwiseExpr = 26, 
-		RULE_comparisonExpr = 27, RULE_arithmeticExpr = 28, RULE_domain = 29, 
-		RULE_rangeLimit = 30, RULE_arrName = 31, RULE_numberList = 32, RULE_number = 33, 
-		RULE_constant = 34, RULE_boolnum = 35, RULE_signedConstant = 36, RULE_widthOrSizeExpr = 37;
+		RULE_updateList = 24, RULE_bitwiseExpr = 25, RULE_comparisonExpr = 26, 
+		RULE_arithmeticExpr = 27, RULE_domain = 28, RULE_rangeLimit = 29, RULE_arrName = 30, 
+		RULE_numberList = 31, RULE_number = 32, RULE_constant = 33, RULE_boolnum = 34, 
+		RULE_signedConstant = 35, RULE_widthOrSizeExpr = 36;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"kqueryExpression", "queryStatements", "ktranslationUnit", "queryCommand", 
@@ -46,9 +46,9 @@ public class KQueryParser extends Parser {
 			"arrayDeclaration", "numArrayElements", "arrayInitializer", "expression", 
 			"genericBitRead", "bitExtractExpr", "version", "notExpr", "concatExpr", 
 			"exprNegation", "selectExpr", "arrExtractExpr", "varName", "leftExpr", 
-			"rightExpr", "namedConstant", "updateList", "bitwiseExpr", "comparisonExpr", 
-			"arithmeticExpr", "domain", "rangeLimit", "arrName", "numberList", "number", 
-			"constant", "boolnum", "signedConstant", "widthOrSizeExpr"
+			"rightExpr", "updateList", "bitwiseExpr", "comparisonExpr", "arithmeticExpr", 
+			"domain", "rangeLimit", "arrName", "numberList", "number", "constant", 
+			"boolnum", "signedConstant", "widthOrSizeExpr"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -59,10 +59,10 @@ public class KQueryParser extends Parser {
 			"'w'", "'0x'", "'true'", "'false'", "'query'", "'array'", "'symbolic'", 
 			"':'", "'->'", "'='", "','", "'Not'", "'Shl'", "'LShr'", "'AShr'", "'Concat'", 
 			"'Extract'", "'ZExt'", "'SExt'", "'Read'", "'Select'", "'Neg'", "'ReadLSB'", 
-			"'ReadMSB'", "'+'", "'-'", "'@'", "'fp'", "'And'", "'Or'", "'Xor'", "'Eq'", 
-			"'Ne'", "'Ult'", "'Ule'", "'Ugt'", "'Uge'", "'Slt'", "'Sle'", "'Sgt'", 
-			"'Sge'", "'Add'", "'Sub'", "'Mul'", "'UDiv'", "'URem'", "'SDiv'", "'SRem'", 
-			null, "'i'", null, null, null, null, "'('", "')'", "'['", "']'", "'{'", 
+			"'ReadMSB'", "'+'", "'-'", "'@'", "'And'", "'Or'", "'Xor'", "'Eq'", "'Ne'", 
+			"'Ult'", "'Ule'", "'Ugt'", "'Uge'", "'Slt'", "'Sle'", "'Sgt'", "'Sge'", 
+			"'Add'", "'Sub'", "'Mul'", "'UDiv'", "'URem'", "'SDiv'", "'SRem'", null, 
+			"'i'", "'fp'", null, null, null, null, "'('", "')'", "'['", "']'", "'{'", 
 			"'}'"
 		};
 	}
@@ -74,11 +74,12 @@ public class KQueryParser extends Parser {
 			"OctId", "WIDTH", "HexId", "TrueMatch", "FalseMatch", "Query", "Array", 
 			"Symbolic", "Colon", "Arrow", "Equal", "COMMA", "NOT", "SHL", "LSHR", 
 			"ASHR", "CONCAT", "EXTRACT", "ZEXT", "SEXT", "READ", "SELECT", "NEGETION", 
-			"READLSB", "READMSB", "PLUS", "MINUS", "ATR", "FP", "BITWISEAND", "BITWISEOR", 
+			"READLSB", "READMSB", "PLUS", "MINUS", "ATR", "BITWISEAND", "BITWISEOR", 
 			"BITWISEXOR", "EQ", "NEQ", "ULT", "ULE", "UGT", "UGE", "SLT", "SLE", 
 			"SGT", "SGE", "ADD", "SUB", "MUL", "UDIV", "UREM", "SDIV", "SREM", "Identifier", 
-			"INT", "Whitespace", "Newline", "BlockComment", "LineComment", "LeftParen", 
-			"RightParen", "LeftBracket", "RightBracket", "LeftBrace", "RightBrace"
+			"INT", "FP", "Whitespace", "Newline", "BlockComment", "LineComment", 
+			"LeftParen", "RightParen", "LeftBracket", "RightBracket", "LeftBrace", 
+			"RightBrace"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -157,9 +158,9 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(76);
+			setState(74);
 			queryStatements();
-			setState(77);
+			setState(75);
 			match(EOF);
 			}
 		}
@@ -202,17 +203,17 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(82);
+			setState(80);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Array || _la==LeftParen) {
 				{
 				{
-				setState(79);
+				setState(77);
 				ktranslationUnit();
 				}
 				}
-				setState(84);
+				setState(82);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -254,20 +255,20 @@ public class KQueryParser extends Parser {
 		KtranslationUnitContext _localctx = new KtranslationUnitContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_ktranslationUnit);
 		try {
-			setState(87);
+			setState(85);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Array:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(85);
+				setState(83);
 				arrayDeclaration();
 				}
 				break;
 			case LeftParen:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(86);
+				setState(84);
 				queryCommand();
 				}
 				break;
@@ -316,15 +317,15 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(89);
+			setState(87);
 			match(LeftParen);
-			setState(90);
+			setState(88);
 			match(Query);
-			setState(91);
+			setState(89);
 			evalExprList();
-			setState(92);
+			setState(90);
 			queryExpr();
-			setState(93);
+			setState(91);
 			match(RightParen);
 			}
 		}
@@ -340,17 +341,6 @@ public class KQueryParser extends Parser {
 	}
 
 	public static class QueryExprContext extends ParserRuleContext {
-		public QueryExprContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_queryExpr; }
-	 
-		public QueryExprContext() { }
-		public void copyFrom(QueryExprContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	public static class WithEvalExprAndArrayListContext extends QueryExprContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -360,85 +350,49 @@ public class KQueryParser extends Parser {
 		public EvalArrayListContext evalArrayList() {
 			return getRuleContext(EvalArrayListContext.class,0);
 		}
-		public WithEvalExprAndArrayListContext(QueryExprContext ctx) { copyFrom(ctx); }
+		public QueryExprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_queryExpr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterWithEvalExprAndArrayList(this);
+			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterQueryExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitWithEvalExprAndArrayList(this);
-		}
-	}
-	public static class SingletonQueryExprContext extends QueryExprContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public SingletonQueryExprContext(QueryExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterSingletonQueryExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitSingletonQueryExpr(this);
-		}
-	}
-	public static class WithEvalExprContext extends QueryExprContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public EvalExprListContext evalExprList() {
-			return getRuleContext(EvalExprListContext.class,0);
-		}
-		public WithEvalExprContext(QueryExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterWithEvalExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitWithEvalExpr(this);
+			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitQueryExpr(this);
 		}
 	}
 
 	public final QueryExprContext queryExpr() throws RecognitionException {
 		QueryExprContext _localctx = new QueryExprContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_queryExpr);
+		int _la;
 		try {
-			setState(103);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(93);
+			expression();
+			setState(98);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
-			case 1:
-				_localctx = new SingletonQueryExprContext(_localctx);
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			if (_la==LeftBracket) {
 				{
-				setState(95);
-				expression();
-				}
-				break;
-			case 2:
-				_localctx = new WithEvalExprContext(_localctx);
-				enterOuterAlt(_localctx, 2);
-				{
+				setState(94);
+				evalExprList();
 				setState(96);
-				expression();
-				setState(97);
-				evalExprList();
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==LeftBracket) {
+					{
+					setState(95);
+					evalArrayList();
+					}
 				}
-				break;
-			case 3:
-				_localctx = new WithEvalExprAndArrayListContext(_localctx);
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(99);
-				expression();
-				setState(100);
-				evalExprList();
-				setState(101);
-				evalArrayList();
+
 				}
-				break;
+			}
+
 			}
 		}
 		catch (RecognitionException re) {
@@ -478,11 +432,11 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(105);
+			setState(100);
 			match(LeftBracket);
-			setState(106);
+			setState(101);
 			expressionList();
-			setState(107);
+			setState(102);
 			match(RightBracket);
 			}
 		}
@@ -523,11 +477,11 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(109);
+			setState(104);
 			match(LeftBracket);
-			setState(110);
+			setState(105);
 			identifierList();
-			setState(111);
+			setState(106);
 			match(RightBracket);
 			}
 		}
@@ -570,17 +524,17 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(116);
+			setState(111);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Boolean) | (1L << SignedConstant) | (1L << Constant) | (1L << Identifier))) != 0) || _la==LeftParen || _la==LeftBracket) {
 				{
 				{
-				setState(113);
+				setState(108);
 				expression();
 				}
 				}
-				setState(118);
+				setState(113);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -623,17 +577,17 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(122);
+			setState(117);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==Identifier) {
 				{
 				{
-				setState(119);
+				setState(114);
 				match(Identifier);
 				}
 				}
-				setState(124);
+				setState(119);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -692,27 +646,27 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(125);
+			setState(120);
 			match(Array);
-			setState(126);
+			setState(121);
 			arrName();
-			setState(127);
+			setState(122);
 			match(LeftBracket);
-			setState(128);
+			setState(123);
 			numArrayElements();
-			setState(129);
+			setState(124);
 			match(RightBracket);
-			setState(130);
+			setState(125);
 			match(Colon);
-			setState(131);
+			setState(126);
 			domain();
-			setState(132);
+			setState(127);
 			match(Arrow);
-			setState(133);
+			setState(128);
 			rangeLimit();
-			setState(134);
+			setState(129);
 			match(Equal);
-			setState(135);
+			setState(130);
 			arrayInitializer();
 			}
 		}
@@ -749,7 +703,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(137);
+			setState(132);
 			match(Constant);
 			}
 		}
@@ -789,24 +743,24 @@ public class KQueryParser extends Parser {
 		ArrayInitializerContext _localctx = new ArrayInitializerContext(_ctx, getState());
 		enterRule(_localctx, 22, RULE_arrayInitializer);
 		try {
-			setState(144);
+			setState(139);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Symbolic:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(139);
+				setState(134);
 				match(Symbolic);
 				}
 				break;
 			case LeftBracket:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(140);
+				setState(135);
 				match(LeftBracket);
-				setState(141);
+				setState(136);
 				numberList();
-				setState(142);
+				setState(137);
 				match(RightBracket);
 				}
 				break;
@@ -919,13 +873,13 @@ public class KQueryParser extends Parser {
 		public ExprNegationContext exprNegation() {
 			return getRuleContext(ExprNegationContext.class,0);
 		}
-		public WidthOrSizeExprContext widthOrSizeExpr() {
-			return getRuleContext(WidthOrSizeExprContext.class,0);
-		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
+		public WidthOrSizeExprContext widthOrSizeExpr() {
+			return getRuleContext(WidthOrSizeExprContext.class,0);
+		}
 		public NegationExprWidthContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -950,55 +904,11 @@ public class KQueryParser extends Parser {
 			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitVariableName(this);
 		}
 	}
-	public static class NegetionExprContext extends ExpressionContext {
-		public TerminalNode LeftParen() { return getToken(KQueryParser.LeftParen, 0); }
-		public ExprNegationContext exprNegation() {
-			return getRuleContext(ExprNegationContext.class,0);
-		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
-		public NegetionExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterNegetionExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitNegetionExpr(this);
-		}
-	}
-	public static class CompExprContext extends ExpressionContext {
-		public TerminalNode LeftParen() { return getToken(KQueryParser.LeftParen, 0); }
-		public ComparisonExprContext comparisonExpr() {
-			return getRuleContext(ComparisonExprContext.class,0);
-		}
-		public LeftExprContext leftExpr() {
-			return getRuleContext(LeftExprContext.class,0);
-		}
-		public RightExprContext rightExpr() {
-			return getRuleContext(RightExprContext.class,0);
-		}
-		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
-		public CompExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterCompExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitCompExpr(this);
-		}
-	}
 	public static class CompExprWidthContext extends ExpressionContext {
 		public TerminalNode LeftParen() { return getToken(KQueryParser.LeftParen, 0); }
 		public ComparisonExprContext comparisonExpr() {
 			return getRuleContext(ComparisonExprContext.class,0);
 		}
-		public WidthOrSizeExprContext widthOrSizeExpr() {
-			return getRuleContext(WidthOrSizeExprContext.class,0);
-		}
 		public LeftExprContext leftExpr() {
 			return getRuleContext(LeftExprContext.class,0);
 		}
@@ -1006,6 +916,9 @@ public class KQueryParser extends Parser {
 			return getRuleContext(RightExprContext.class,0);
 		}
 		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
+		public WidthOrSizeExprContext widthOrSizeExpr() {
+			return getRuleContext(WidthOrSizeExprContext.class,0);
+		}
 		public CompExprWidthContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1033,28 +946,6 @@ public class KQueryParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitSizeQuery(this);
-		}
-	}
-	public static class ConcatExprNWContext extends ExpressionContext {
-		public TerminalNode LeftParen() { return getToken(KQueryParser.LeftParen, 0); }
-		public ConcatExprContext concatExpr() {
-			return getRuleContext(ConcatExprContext.class,0);
-		}
-		public LeftExprContext leftExpr() {
-			return getRuleContext(LeftExprContext.class,0);
-		}
-		public RightExprContext rightExpr() {
-			return getRuleContext(RightExprContext.class,0);
-		}
-		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
-		public ConcatExprNWContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterConcatExprNW(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitConcatExprNW(this);
 		}
 	}
 	public static class NotExprWidthContext extends ExpressionContext {
@@ -1106,28 +997,6 @@ public class KQueryParser extends Parser {
 			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitArrExtractExprWidth(this);
 		}
 	}
-	public static class ReadExprContext extends ExpressionContext {
-		public TerminalNode LeftParen() { return getToken(KQueryParser.LeftParen, 0); }
-		public GenericBitReadContext genericBitRead() {
-			return getRuleContext(GenericBitReadContext.class,0);
-		}
-		public WidthOrSizeExprContext widthOrSizeExpr() {
-			return getRuleContext(WidthOrSizeExprContext.class,0);
-		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
-		public ReadExprContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterReadExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitReadExpr(this);
-		}
-	}
 	public static class SingletonContext extends ExpressionContext {
 		public NumberContext number() {
 			return getRuleContext(NumberContext.class,0);
@@ -1143,8 +1012,8 @@ public class KQueryParser extends Parser {
 		}
 	}
 	public static class NamedAbbreviationContext extends ExpressionContext {
-		public NamedConstantContext namedConstant() {
-			return getRuleContext(NamedConstantContext.class,0);
+		public VarNameContext varName() {
+			return getRuleContext(VarNameContext.class,0);
 		}
 		public TerminalNode Colon() { return getToken(KQueryParser.Colon, 0); }
 		public ExpressionContext expression() {
@@ -1185,10 +1054,10 @@ public class KQueryParser extends Parser {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
+		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
 		public VersionContext version() {
 			return getRuleContext(VersionContext.class,0);
 		}
-		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
 		public ReadExpresssionVersionedContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1226,9 +1095,6 @@ public class KQueryParser extends Parser {
 		public ConcatExprContext concatExpr() {
 			return getRuleContext(ConcatExprContext.class,0);
 		}
-		public WidthOrSizeExprContext widthOrSizeExpr() {
-			return getRuleContext(WidthOrSizeExprContext.class,0);
-		}
 		public LeftExprContext leftExpr() {
 			return getRuleContext(LeftExprContext.class,0);
 		}
@@ -1236,6 +1102,9 @@ public class KQueryParser extends Parser {
 			return getRuleContext(RightExprContext.class,0);
 		}
 		public TerminalNode RightParen() { return getToken(KQueryParser.RightParen, 0); }
+		public WidthOrSizeExprContext widthOrSizeExpr() {
+			return getRuleContext(WidthOrSizeExprContext.class,0);
+		}
 		public ConcatExprWidthContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1250,15 +1119,16 @@ public class KQueryParser extends Parser {
 	public final ExpressionContext expression() throws RecognitionException {
 		ExpressionContext _localctx = new ExpressionContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_expression);
+		int _la;
 		try {
-			setState(251);
+			setState(231);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
 				_localctx = new VariableNameContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(146);
+				setState(141);
 				varName();
 				}
 				break;
@@ -1266,11 +1136,11 @@ public class KQueryParser extends Parser {
 				_localctx = new NamedAbbreviationContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(147);
-				namedConstant();
-				setState(148);
+				setState(142);
+				varName();
+				setState(143);
 				match(Colon);
-				setState(149);
+				setState(144);
 				expression();
 				}
 				break;
@@ -1278,13 +1148,13 @@ public class KQueryParser extends Parser {
 				_localctx = new SizeQueryContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(151);
+				setState(146);
 				match(LeftParen);
-				setState(152);
+				setState(147);
 				widthOrSizeExpr();
-				setState(153);
+				setState(148);
 				number();
-				setState(154);
+				setState(149);
 				match(RightParen);
 				}
 				break;
@@ -1292,17 +1162,17 @@ public class KQueryParser extends Parser {
 				_localctx = new ArithExprContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(156);
+				setState(151);
 				match(LeftParen);
-				setState(157);
+				setState(152);
 				arithmeticExpr();
-				setState(158);
+				setState(153);
 				widthOrSizeExpr();
-				setState(159);
+				setState(154);
 				leftExpr();
-				setState(160);
+				setState(155);
 				rightExpr();
-				setState(161);
+				setState(156);
 				match(RightParen);
 				}
 				break;
@@ -1310,19 +1180,19 @@ public class KQueryParser extends Parser {
 				_localctx = new NotExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(163);
+				setState(158);
 				match(LeftParen);
-				setState(164);
+				setState(159);
 				notExpr();
-				setState(165);
+				setState(160);
 				match(LeftBracket);
-				setState(166);
+				setState(161);
 				widthOrSizeExpr();
-				setState(167);
+				setState(162);
 				match(RightBracket);
-				setState(168);
+				setState(163);
 				expression();
-				setState(169);
+				setState(164);
 				match(RightParen);
 				}
 				break;
@@ -1330,17 +1200,17 @@ public class KQueryParser extends Parser {
 				_localctx = new BitwExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(171);
+				setState(166);
 				match(LeftParen);
-				setState(172);
+				setState(167);
 				bitwiseExpr();
-				setState(173);
+				setState(168);
 				widthOrSizeExpr();
-				setState(174);
+				setState(169);
 				leftExpr();
-				setState(175);
+				setState(170);
 				rightExpr();
-				setState(176);
+				setState(171);
 				match(RightParen);
 				}
 				break;
@@ -1348,28 +1218,46 @@ public class KQueryParser extends Parser {
 				_localctx = new CompExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(178);
+				setState(173);
 				match(LeftParen);
-				setState(179);
+				setState(174);
 				comparisonExpr();
-				setState(180);
-				widthOrSizeExpr();
-				setState(181);
+				setState(176);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==WidthType) {
+					{
+					setState(175);
+					widthOrSizeExpr();
+					}
+				}
+
+				setState(178);
 				leftExpr();
-				setState(182);
+				setState(179);
 				rightExpr();
-				setState(183);
+				setState(180);
 				match(RightParen);
 				}
 				break;
 			case 8:
-				_localctx = new CompExprContext(_localctx);
+				_localctx = new ConcatExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(185);
+				setState(182);
 				match(LeftParen);
-				setState(186);
-				comparisonExpr();
+				setState(183);
+				concatExpr();
+				setState(185);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==WidthType) {
+					{
+					setState(184);
+					widthOrSizeExpr();
+					}
+				}
+
 				setState(187);
 				leftExpr();
 				setState(188);
@@ -1379,170 +1267,122 @@ public class KQueryParser extends Parser {
 				}
 				break;
 			case 9:
-				_localctx = new ConcatExprWidthContext(_localctx);
+				_localctx = new ArrExtractExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 9);
 				{
 				setState(191);
 				match(LeftParen);
 				setState(192);
-				concatExpr();
+				arrExtractExpr();
 				setState(193);
 				widthOrSizeExpr();
 				setState(194);
-				leftExpr();
+				number();
 				setState(195);
-				rightExpr();
+				expression();
 				setState(196);
 				match(RightParen);
 				}
 				break;
 			case 10:
-				_localctx = new ConcatExprNWContext(_localctx);
+				_localctx = new BitExtractExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 10);
 				{
 				setState(198);
 				match(LeftParen);
 				setState(199);
-				concatExpr();
+				bitExtractExpr();
 				setState(200);
-				leftExpr();
+				widthOrSizeExpr();
 				setState(201);
-				rightExpr();
+				expression();
 				setState(202);
 				match(RightParen);
 				}
 				break;
 			case 11:
-				_localctx = new ArrExtractExprWidthContext(_localctx);
+				_localctx = new ReadExpresssionVersionedContext(_localctx);
 				enterOuterAlt(_localctx, 11);
 				{
 				setState(204);
 				match(LeftParen);
 				setState(205);
-				arrExtractExpr();
+				genericBitRead();
 				setState(206);
 				widthOrSizeExpr();
 				setState(207);
-				number();
-				setState(208);
 				expression();
 				setState(209);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==Identifier || _la==LeftBracket) {
+					{
+					setState(208);
+					version();
+					}
+				}
+
+				setState(211);
 				match(RightParen);
 				}
 				break;
 			case 12:
-				_localctx = new BitExtractExprWidthContext(_localctx);
+				_localctx = new SelectExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(211);
-				match(LeftParen);
-				setState(212);
-				bitExtractExpr();
 				setState(213);
-				widthOrSizeExpr();
+				match(LeftParen);
 				setState(214);
-				expression();
+				selectExpr();
 				setState(215);
+				widthOrSizeExpr();
+				setState(216);
+				leftExpr();
+				setState(217);
+				rightExpr();
+				setState(218);
+				expression();
+				setState(219);
 				match(RightParen);
 				}
 				break;
 			case 13:
-				_localctx = new ReadExpresssionVersionedContext(_localctx);
+				_localctx = new NegationExprWidthContext(_localctx);
 				enterOuterAlt(_localctx, 13);
 				{
-				setState(217);
-				match(LeftParen);
-				setState(218);
-				genericBitRead();
-				setState(219);
-				widthOrSizeExpr();
-				setState(220);
-				expression();
 				setState(221);
-				version();
+				match(LeftParen);
 				setState(222);
+				exprNegation();
+				setState(224);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==WidthType) {
+					{
+					setState(223);
+					widthOrSizeExpr();
+					}
+				}
+
+				setState(226);
+				expression();
+				setState(227);
 				match(RightParen);
 				}
 				break;
 			case 14:
-				_localctx = new SelectExprWidthContext(_localctx);
+				_localctx = new VersionExprContext(_localctx);
 				enterOuterAlt(_localctx, 14);
 				{
-				setState(224);
-				match(LeftParen);
-				setState(225);
-				selectExpr();
-				setState(226);
-				widthOrSizeExpr();
-				setState(227);
-				leftExpr();
-				setState(228);
-				rightExpr();
 				setState(229);
-				expression();
-				setState(230);
-				match(RightParen);
-				}
-				break;
-			case 15:
-				_localctx = new NegationExprWidthContext(_localctx);
-				enterOuterAlt(_localctx, 15);
-				{
-				setState(232);
-				match(LeftParen);
-				setState(233);
-				exprNegation();
-				setState(234);
-				widthOrSizeExpr();
-				setState(235);
-				expression();
-				setState(236);
-				match(RightParen);
-				}
-				break;
-			case 16:
-				_localctx = new NegetionExprContext(_localctx);
-				enterOuterAlt(_localctx, 16);
-				{
-				setState(238);
-				match(LeftParen);
-				setState(239);
-				exprNegation();
-				setState(240);
-				expression();
-				setState(241);
-				match(RightParen);
-				}
-				break;
-			case 17:
-				_localctx = new ReadExprContext(_localctx);
-				enterOuterAlt(_localctx, 17);
-				{
-				setState(243);
-				match(LeftParen);
-				setState(244);
-				genericBitRead();
-				setState(245);
-				widthOrSizeExpr();
-				setState(246);
-				expression();
-				setState(247);
-				match(RightParen);
-				}
-				break;
-			case 18:
-				_localctx = new VersionExprContext(_localctx);
-				enterOuterAlt(_localctx, 18);
-				{
-				setState(249);
 				version();
 				}
 				break;
-			case 19:
+			case 15:
 				_localctx = new SingletonContext(_localctx);
-				enterOuterAlt(_localctx, 19);
+				enterOuterAlt(_localctx, 15);
 				{
-				setState(250);
+				setState(230);
 				number();
 				}
 				break;
@@ -1584,7 +1424,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(253);
+			setState(233);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << READ) | (1L << READLSB) | (1L << READMSB))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1631,7 +1471,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(255);
+			setState(235);
 			_la = _input.LA(1);
 			if ( !(_la==ZEXT || _la==SEXT) ) {
 			_errHandler.recoverInline(this);
@@ -1667,13 +1507,13 @@ public class KQueryParser extends Parser {
 	}
 	public static class UpdationListContext extends VersionContext {
 		public TerminalNode LeftBracket() { return getToken(KQueryParser.LeftBracket, 0); }
-		public UpdateListContext updateList() {
-			return getRuleContext(UpdateListContext.class,0);
-		}
 		public TerminalNode RightBracket() { return getToken(KQueryParser.RightBracket, 0); }
 		public TerminalNode ATR() { return getToken(KQueryParser.ATR, 0); }
 		public VersionContext version() {
 			return getRuleContext(VersionContext.class,0);
+		}
+		public UpdateListContext updateList() {
+			return getRuleContext(UpdateListContext.class,0);
 		}
 		public UpdationListContext(VersionContext ctx) { copyFrom(ctx); }
 		@Override
@@ -1689,6 +1529,10 @@ public class KQueryParser extends Parser {
 		public VarNameContext varName() {
 			return getRuleContext(VarNameContext.class,0);
 		}
+		public TerminalNode Colon() { return getToken(KQueryParser.Colon, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
 		public VersionVariableNameContext(VersionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1699,99 +1543,61 @@ public class KQueryParser extends Parser {
 			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitVersionVariableName(this);
 		}
 	}
-	public static class VersionedNamedAbbreviationContext extends VersionContext {
-		public NamedConstantContext namedConstant() {
-			return getRuleContext(NamedConstantContext.class,0);
-		}
-		public TerminalNode Colon() { return getToken(KQueryParser.Colon, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public VersionedNamedAbbreviationContext(VersionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterVersionedNamedAbbreviation(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitVersionedNamedAbbreviation(this);
-		}
-	}
-	public static class NoUpdateListContext extends VersionContext {
-		public TerminalNode LeftBracket() { return getToken(KQueryParser.LeftBracket, 0); }
-		public TerminalNode RightBracket() { return getToken(KQueryParser.RightBracket, 0); }
-		public TerminalNode ATR() { return getToken(KQueryParser.ATR, 0); }
-		public VersionContext version() {
-			return getRuleContext(VersionContext.class,0);
-		}
-		public NoUpdateListContext(VersionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterNoUpdateList(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitNoUpdateList(this);
-		}
-	}
 
 	public final VersionContext version() throws RecognitionException {
 		VersionContext _localctx = new VersionContext(_ctx, getState());
 		enterRule(_localctx, 30, RULE_version);
+		int _la;
 		try {
-			setState(272);
+			setState(249);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
-			case 1:
+			switch (_input.LA(1)) {
+			case Identifier:
 				_localctx = new VersionVariableNameContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(257);
+				setState(237);
 				varName();
+				setState(240);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==Colon) {
+					{
+					setState(238);
+					match(Colon);
+					setState(239);
+					expression();
+					}
+				}
+
 				}
 				break;
-			case 2:
-				_localctx = new VersionedNamedAbbreviationContext(_localctx);
+			case LeftBracket:
+				_localctx = new UpdationListContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(258);
-				namedConstant();
-				setState(259);
-				match(Colon);
-				setState(260);
-				expression();
-				}
-				break;
-			case 3:
-				_localctx = new UpdationListContext(_localctx);
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(262);
+				setState(242);
 				match(LeftBracket);
-				setState(263);
-				updateList();
-				setState(264);
+				setState(244);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Boolean) | (1L << SignedConstant) | (1L << Constant) | (1L << Identifier))) != 0) || _la==LeftParen || _la==LeftBracket) {
+					{
+					setState(243);
+					updateList();
+					}
+				}
+
+				setState(246);
 				match(RightBracket);
-				setState(265);
+				setState(247);
 				match(ATR);
-				setState(266);
+				setState(248);
 				version();
 				}
 				break;
-			case 4:
-				_localctx = new NoUpdateListContext(_localctx);
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(268);
-				match(LeftBracket);
-				setState(269);
-				match(RightBracket);
-				setState(270);
-				match(ATR);
-				setState(271);
-				version();
-				}
-				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1827,7 +1633,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(274);
+			setState(251);
 			match(NOT);
 			}
 		}
@@ -1864,7 +1670,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(276);
+			setState(253);
 			match(CONCAT);
 			}
 		}
@@ -1901,7 +1707,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(278);
+			setState(255);
 			match(NEGETION);
 			}
 		}
@@ -1938,7 +1744,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(280);
+			setState(257);
 			match(SELECT);
 			}
 		}
@@ -1975,7 +1781,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(282);
+			setState(259);
 			match(EXTRACT);
 			}
 		}
@@ -2012,7 +1818,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(284);
+			setState(261);
 			match(Identifier);
 			}
 		}
@@ -2051,7 +1857,7 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(286);
+			setState(263);
 			expression();
 			}
 		}
@@ -2090,45 +1896,8 @@ public class KQueryParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(288);
+			setState(265);
 			expression();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class NamedConstantContext extends ParserRuleContext {
-		public TerminalNode Identifier() { return getToken(KQueryParser.Identifier, 0); }
-		public NamedConstantContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_namedConstant; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).enterNamedConstant(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KQueryListener ) ((KQueryListener)listener).exitNamedConstant(this);
-		}
-	}
-
-	public final NamedConstantContext namedConstant() throws RecognitionException {
-		NamedConstantContext _localctx = new NamedConstantContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_namedConstant);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(290);
-			match(Identifier);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2149,10 +1918,13 @@ public class KQueryParser extends Parser {
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode Equal() { return getToken(KQueryParser.Equal, 0); }
-		public TerminalNode COMMA() { return getToken(KQueryParser.COMMA, 0); }
-		public UpdateListContext updateList() {
-			return getRuleContext(UpdateListContext.class,0);
+		public List<TerminalNode> Equal() { return getTokens(KQueryParser.Equal); }
+		public TerminalNode Equal(int i) {
+			return getToken(KQueryParser.Equal, i);
+		}
+		public List<TerminalNode> COMMA() { return getTokens(KQueryParser.COMMA); }
+		public TerminalNode COMMA(int i) {
+			return getToken(KQueryParser.COMMA, i);
 		}
 		public UpdateListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2170,37 +1942,37 @@ public class KQueryParser extends Parser {
 
 	public final UpdateListContext updateList() throws RecognitionException {
 		UpdateListContext _localctx = new UpdateListContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_updateList);
+		enterRule(_localctx, 48, RULE_updateList);
+		int _la;
 		try {
-			setState(302);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(267);
+			expression();
+			setState(268);
+			match(Equal);
+			setState(269);
+			expression();
+			setState(277);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			while (_la==COMMA) {
 				{
-				setState(292);
-				expression();
-				setState(293);
-				match(Equal);
-				setState(294);
-				expression();
-				setState(295);
+				{
+				setState(270);
 				match(COMMA);
-				setState(296);
-				updateList();
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(298);
+				setState(271);
 				expression();
-				setState(299);
+				setState(272);
 				match(Equal);
-				setState(300);
+				setState(273);
 				expression();
 				}
-				break;
+				}
+				setState(279);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2237,12 +2009,12 @@ public class KQueryParser extends Parser {
 
 	public final BitwiseExprContext bitwiseExpr() throws RecognitionException {
 		BitwiseExprContext _localctx = new BitwiseExprContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_bitwiseExpr);
+		enterRule(_localctx, 50, RULE_bitwiseExpr);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(304);
+			setState(280);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SHL) | (1L << LSHR) | (1L << ASHR) | (1L << BITWISEAND) | (1L << BITWISEOR) | (1L << BITWISEXOR))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -2292,12 +2064,12 @@ public class KQueryParser extends Parser {
 
 	public final ComparisonExprContext comparisonExpr() throws RecognitionException {
 		ComparisonExprContext _localctx = new ComparisonExprContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_comparisonExpr);
+		enterRule(_localctx, 52, RULE_comparisonExpr);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(306);
+			setState(282);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << EQ) | (1L << NEQ) | (1L << ULT) | (1L << ULE) | (1L << UGT) | (1L << UGE) | (1L << SLT) | (1L << SLE) | (1L << SGT) | (1L << SGE))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -2344,12 +2116,12 @@ public class KQueryParser extends Parser {
 
 	public final ArithmeticExprContext arithmeticExpr() throws RecognitionException {
 		ArithmeticExprContext _localctx = new ArithmeticExprContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_arithmeticExpr);
+		enterRule(_localctx, 54, RULE_arithmeticExpr);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(308);
+			setState(284);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ADD) | (1L << SUB) | (1L << MUL) | (1L << UDIV) | (1L << UREM) | (1L << SDIV) | (1L << SREM))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -2392,11 +2164,11 @@ public class KQueryParser extends Parser {
 
 	public final DomainContext domain() throws RecognitionException {
 		DomainContext _localctx = new DomainContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_domain);
+		enterRule(_localctx, 56, RULE_domain);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(310);
+			setState(286);
 			widthOrSizeExpr();
 			}
 		}
@@ -2431,11 +2203,11 @@ public class KQueryParser extends Parser {
 
 	public final RangeLimitContext rangeLimit() throws RecognitionException {
 		RangeLimitContext _localctx = new RangeLimitContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_rangeLimit);
+		enterRule(_localctx, 58, RULE_rangeLimit);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(312);
+			setState(288);
 			widthOrSizeExpr();
 			}
 		}
@@ -2468,11 +2240,11 @@ public class KQueryParser extends Parser {
 
 	public final ArrNameContext arrName() throws RecognitionException {
 		ArrNameContext _localctx = new ArrNameContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_arrName);
+		enterRule(_localctx, 60, RULE_arrName);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(314);
+			setState(290);
 			match(Identifier);
 			}
 		}
@@ -2488,11 +2260,11 @@ public class KQueryParser extends Parser {
 	}
 
 	public static class NumberListContext extends ParserRuleContext {
-		public NumberContext number() {
-			return getRuleContext(NumberContext.class,0);
+		public List<NumberContext> number() {
+			return getRuleContexts(NumberContext.class);
 		}
-		public NumberListContext numberList() {
-			return getRuleContext(NumberListContext.class,0);
+		public NumberContext number(int i) {
+			return getRuleContext(NumberContext.class,i);
 		}
 		public NumberListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2510,27 +2282,25 @@ public class KQueryParser extends Parser {
 
 	public final NumberListContext numberList() throws RecognitionException {
 		NumberListContext _localctx = new NumberListContext(_ctx, getState());
-		enterRule(_localctx, 64, RULE_numberList);
+		enterRule(_localctx, 62, RULE_numberList);
+		int _la;
 		try {
-			setState(320);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(293); 
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			do {
 				{
-				setState(316);
+				{
+				setState(292);
 				number();
 				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(317);
-				number();
-				setState(318);
-				numberList();
 				}
-				break;
+				setState(295); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Boolean) | (1L << SignedConstant) | (1L << Constant))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -2570,29 +2340,29 @@ public class KQueryParser extends Parser {
 
 	public final NumberContext number() throws RecognitionException {
 		NumberContext _localctx = new NumberContext(_ctx, getState());
-		enterRule(_localctx, 66, RULE_number);
+		enterRule(_localctx, 64, RULE_number);
 		try {
-			setState(325);
+			setState(300);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Boolean:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(322);
+				setState(297);
 				boolnum();
 				}
 				break;
 			case SignedConstant:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(323);
+				setState(298);
 				signedConstant();
 				}
 				break;
 			case Constant:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(324);
+				setState(299);
 				constant();
 				}
 				break;
@@ -2629,11 +2399,11 @@ public class KQueryParser extends Parser {
 
 	public final ConstantContext constant() throws RecognitionException {
 		ConstantContext _localctx = new ConstantContext(_ctx, getState());
-		enterRule(_localctx, 68, RULE_constant);
+		enterRule(_localctx, 66, RULE_constant);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(327);
+			setState(302);
 			match(Constant);
 			}
 		}
@@ -2666,11 +2436,11 @@ public class KQueryParser extends Parser {
 
 	public final BoolnumContext boolnum() throws RecognitionException {
 		BoolnumContext _localctx = new BoolnumContext(_ctx, getState());
-		enterRule(_localctx, 70, RULE_boolnum);
+		enterRule(_localctx, 68, RULE_boolnum);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(329);
+			setState(304);
 			match(Boolean);
 			}
 		}
@@ -2703,11 +2473,11 @@ public class KQueryParser extends Parser {
 
 	public final SignedConstantContext signedConstant() throws RecognitionException {
 		SignedConstantContext _localctx = new SignedConstantContext(_ctx, getState());
-		enterRule(_localctx, 72, RULE_signedConstant);
+		enterRule(_localctx, 70, RULE_signedConstant);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(331);
+			setState(306);
 			match(SignedConstant);
 			}
 		}
@@ -2740,11 +2510,11 @@ public class KQueryParser extends Parser {
 
 	public final WidthOrSizeExprContext widthOrSizeExpr() throws RecognitionException {
 		WidthOrSizeExprContext _localctx = new WidthOrSizeExprContext(_ctx, getState());
-		enterRule(_localctx, 74, RULE_widthOrSizeExpr);
+		enterRule(_localctx, 72, RULE_widthOrSizeExpr);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(333);
+			setState(308);
 			match(WidthType);
 			}
 		}
@@ -2760,114 +2530,106 @@ public class KQueryParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3I\u0152\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3I\u0139\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
 		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
-		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\4\'\t\'\3\2\3\2\3\2\3\3\7\3S\n\3\f"+
-		"\3\16\3V\13\3\3\4\3\4\5\4Z\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6"+
-		"\3\6\3\6\3\6\3\6\5\6j\n\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t\7\tu\n\t"+
-		"\f\t\16\tx\13\t\3\n\7\n{\n\n\f\n\16\n~\13\n\3\13\3\13\3\13\3\13\3\13\3"+
-		"\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\r\3\r\3\r\3\r\3\r\5\r\u0093"+
-		"\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5\16\u00fe\n\16\3\17\3\17\3\20"+
-		"\3\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21"+
-		"\3\21\3\21\5\21\u0113\n\21\3\22\3\22\3\23\3\23\3\24\3\24\3\25\3\25\3\26"+
-		"\3\26\3\27\3\27\3\30\3\30\3\31\3\31\3\32\3\32\3\33\3\33\3\33\3\33\3\33"+
-		"\3\33\3\33\3\33\3\33\3\33\5\33\u0131\n\33\3\34\3\34\3\35\3\35\3\36\3\36"+
-		"\3\37\3\37\3 \3 \3!\3!\3\"\3\"\3\"\3\"\5\"\u0143\n\"\3#\3#\3#\5#\u0148"+
-		"\n#\3$\3$\3%\3%\3&\3&\3\'\3\'\3\'\2\2(\2\4\6\b\n\f\16\20\22\24\26\30\32"+
-		"\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJL\2\7\4\2!!$%\3\2\37 \4\2\32\34*"+
-		",\3\2-\66\3\2\67=\2\u014b\2N\3\2\2\2\4T\3\2\2\2\6Y\3\2\2\2\b[\3\2\2\2"+
-		"\ni\3\2\2\2\fk\3\2\2\2\16o\3\2\2\2\20v\3\2\2\2\22|\3\2\2\2\24\177\3\2"+
-		"\2\2\26\u008b\3\2\2\2\30\u0092\3\2\2\2\32\u00fd\3\2\2\2\34\u00ff\3\2\2"+
-		"\2\36\u0101\3\2\2\2 \u0112\3\2\2\2\"\u0114\3\2\2\2$\u0116\3\2\2\2&\u0118"+
-		"\3\2\2\2(\u011a\3\2\2\2*\u011c\3\2\2\2,\u011e\3\2\2\2.\u0120\3\2\2\2\60"+
-		"\u0122\3\2\2\2\62\u0124\3\2\2\2\64\u0130\3\2\2\2\66\u0132\3\2\2\28\u0134"+
-		"\3\2\2\2:\u0136\3\2\2\2<\u0138\3\2\2\2>\u013a\3\2\2\2@\u013c\3\2\2\2B"+
-		"\u0142\3\2\2\2D\u0147\3\2\2\2F\u0149\3\2\2\2H\u014b\3\2\2\2J\u014d\3\2"+
-		"\2\2L\u014f\3\2\2\2NO\5\4\3\2OP\7\2\2\3P\3\3\2\2\2QS\5\6\4\2RQ\3\2\2\2"+
-		"SV\3\2\2\2TR\3\2\2\2TU\3\2\2\2U\5\3\2\2\2VT\3\2\2\2WZ\5\24\13\2XZ\5\b"+
-		"\5\2YW\3\2\2\2YX\3\2\2\2Z\7\3\2\2\2[\\\7D\2\2\\]\7\22\2\2]^\5\f\7\2^_"+
-		"\5\n\6\2_`\7E\2\2`\t\3\2\2\2aj\5\32\16\2bc\5\32\16\2cd\5\f\7\2dj\3\2\2"+
-		"\2ef\5\32\16\2fg\5\f\7\2gh\5\16\b\2hj\3\2\2\2ia\3\2\2\2ib\3\2\2\2ie\3"+
-		"\2\2\2j\13\3\2\2\2kl\7F\2\2lm\5\20\t\2mn\7G\2\2n\r\3\2\2\2op\7F\2\2pq"+
-		"\5\22\n\2qr\7G\2\2r\17\3\2\2\2su\5\32\16\2ts\3\2\2\2ux\3\2\2\2vt\3\2\2"+
-		"\2vw\3\2\2\2w\21\3\2\2\2xv\3\2\2\2y{\7>\2\2zy\3\2\2\2{~\3\2\2\2|z\3\2"+
-		"\2\2|}\3\2\2\2}\23\3\2\2\2~|\3\2\2\2\177\u0080\7\23\2\2\u0080\u0081\5"+
-		"@!\2\u0081\u0082\7F\2\2\u0082\u0083\5\26\f\2\u0083\u0084\7G\2\2\u0084"+
-		"\u0085\7\25\2\2\u0085\u0086\5<\37\2\u0086\u0087\7\26\2\2\u0087\u0088\5"+
-		"> \2\u0088\u0089\7\27\2\2\u0089\u008a\5\30\r\2\u008a\25\3\2\2\2\u008b"+
-		"\u008c\7\5\2\2\u008c\27\3\2\2\2\u008d\u0093\7\24\2\2\u008e\u008f\7F\2"+
-		"\2\u008f\u0090\5B\"\2\u0090\u0091\7G\2\2\u0091\u0093\3\2\2\2\u0092\u008d"+
-		"\3\2\2\2\u0092\u008e\3\2\2\2\u0093\31\3\2\2\2\u0094\u00fe\5,\27\2\u0095"+
-		"\u0096\5\62\32\2\u0096\u0097\7\25\2\2\u0097\u0098\5\32\16\2\u0098\u00fe"+
-		"\3\2\2\2\u0099\u009a\7D\2\2\u009a\u009b\5L\'\2\u009b\u009c\5D#\2\u009c"+
-		"\u009d\7E\2\2\u009d\u00fe\3\2\2\2\u009e\u009f\7D\2\2\u009f\u00a0\5:\36"+
-		"\2\u00a0\u00a1\5L\'\2\u00a1\u00a2\5.\30\2\u00a2\u00a3\5\60\31\2\u00a3"+
-		"\u00a4\7E\2\2\u00a4\u00fe\3\2\2\2\u00a5\u00a6\7D\2\2\u00a6\u00a7\5\"\22"+
-		"\2\u00a7\u00a8\7F\2\2\u00a8\u00a9\5L\'\2\u00a9\u00aa\7G\2\2\u00aa\u00ab"+
-		"\5\32\16\2\u00ab\u00ac\7E\2\2\u00ac\u00fe\3\2\2\2\u00ad\u00ae\7D\2\2\u00ae"+
-		"\u00af\5\66\34\2\u00af\u00b0\5L\'\2\u00b0\u00b1\5.\30\2\u00b1\u00b2\5"+
-		"\60\31\2\u00b2\u00b3\7E\2\2\u00b3\u00fe\3\2\2\2\u00b4\u00b5\7D\2\2\u00b5"+
-		"\u00b6\58\35\2\u00b6\u00b7\5L\'\2\u00b7\u00b8\5.\30\2\u00b8\u00b9\5\60"+
-		"\31\2\u00b9\u00ba\7E\2\2\u00ba\u00fe\3\2\2\2\u00bb\u00bc\7D\2\2\u00bc"+
-		"\u00bd\58\35\2\u00bd\u00be\5.\30\2\u00be\u00bf\5\60\31\2\u00bf\u00c0\7"+
-		"E\2\2\u00c0\u00fe\3\2\2\2\u00c1\u00c2\7D\2\2\u00c2\u00c3\5$\23\2\u00c3"+
-		"\u00c4\5L\'\2\u00c4\u00c5\5.\30\2\u00c5\u00c6\5\60\31\2\u00c6\u00c7\7"+
-		"E\2\2\u00c7\u00fe\3\2\2\2\u00c8\u00c9\7D\2\2\u00c9\u00ca\5$\23\2\u00ca"+
-		"\u00cb\5.\30\2\u00cb\u00cc\5\60\31\2\u00cc\u00cd\7E\2\2\u00cd\u00fe\3"+
-		"\2\2\2\u00ce\u00cf\7D\2\2\u00cf\u00d0\5*\26\2\u00d0\u00d1\5L\'\2\u00d1"+
-		"\u00d2\5D#\2\u00d2\u00d3\5\32\16\2\u00d3\u00d4\7E\2\2\u00d4\u00fe\3\2"+
-		"\2\2\u00d5\u00d6\7D\2\2\u00d6\u00d7\5\36\20\2\u00d7\u00d8\5L\'\2\u00d8"+
-		"\u00d9\5\32\16\2\u00d9\u00da\7E\2\2\u00da\u00fe\3\2\2\2\u00db\u00dc\7"+
-		"D\2\2\u00dc\u00dd\5\34\17\2\u00dd\u00de\5L\'\2\u00de\u00df\5\32\16\2\u00df"+
-		"\u00e0\5 \21\2\u00e0\u00e1\7E\2\2\u00e1\u00fe\3\2\2\2\u00e2\u00e3\7D\2"+
-		"\2\u00e3\u00e4\5(\25\2\u00e4\u00e5\5L\'\2\u00e5\u00e6\5.\30\2\u00e6\u00e7"+
-		"\5\60\31\2\u00e7\u00e8\5\32\16\2\u00e8\u00e9\7E\2\2\u00e9\u00fe\3\2\2"+
-		"\2\u00ea\u00eb\7D\2\2\u00eb\u00ec\5&\24\2\u00ec\u00ed\5L\'\2\u00ed\u00ee"+
-		"\5\32\16\2\u00ee\u00ef\7E\2\2\u00ef\u00fe\3\2\2\2\u00f0\u00f1\7D\2\2\u00f1"+
-		"\u00f2\5&\24\2\u00f2\u00f3\5\32\16\2\u00f3\u00f4\7E\2\2\u00f4\u00fe\3"+
-		"\2\2\2\u00f5\u00f6\7D\2\2\u00f6\u00f7\5\34\17\2\u00f7\u00f8\5L\'\2\u00f8"+
-		"\u00f9\5\32\16\2\u00f9\u00fa\7E\2\2\u00fa\u00fe\3\2\2\2\u00fb\u00fe\5"+
-		" \21\2\u00fc\u00fe\5D#\2\u00fd\u0094\3\2\2\2\u00fd\u0095\3\2\2\2\u00fd"+
-		"\u0099\3\2\2\2\u00fd\u009e\3\2\2\2\u00fd\u00a5\3\2\2\2\u00fd\u00ad\3\2"+
-		"\2\2\u00fd\u00b4\3\2\2\2\u00fd\u00bb\3\2\2\2\u00fd\u00c1\3\2\2\2\u00fd"+
-		"\u00c8\3\2\2\2\u00fd\u00ce\3\2\2\2\u00fd\u00d5\3\2\2\2\u00fd\u00db\3\2"+
-		"\2\2\u00fd\u00e2\3\2\2\2\u00fd\u00ea\3\2\2\2\u00fd\u00f0\3\2\2\2\u00fd"+
-		"\u00f5\3\2\2\2\u00fd\u00fb\3\2\2\2\u00fd\u00fc\3\2\2\2\u00fe\33\3\2\2"+
-		"\2\u00ff\u0100\t\2\2\2\u0100\35\3\2\2\2\u0101\u0102\t\3\2\2\u0102\37\3"+
-		"\2\2\2\u0103\u0113\5,\27\2\u0104\u0105\5\62\32\2\u0105\u0106\7\25\2\2"+
-		"\u0106\u0107\5\32\16\2\u0107\u0113\3\2\2\2\u0108\u0109\7F\2\2\u0109\u010a"+
-		"\5\64\33\2\u010a\u010b\7G\2\2\u010b\u010c\7(\2\2\u010c\u010d\5 \21\2\u010d"+
-		"\u0113\3\2\2\2\u010e\u010f\7F\2\2\u010f\u0110\7G\2\2\u0110\u0111\7(\2"+
-		"\2\u0111\u0113\5 \21\2\u0112\u0103\3\2\2\2\u0112\u0104\3\2\2\2\u0112\u0108"+
-		"\3\2\2\2\u0112\u010e\3\2\2\2\u0113!\3\2\2\2\u0114\u0115\7\31\2\2\u0115"+
-		"#\3\2\2\2\u0116\u0117\7\35\2\2\u0117%\3\2\2\2\u0118\u0119\7#\2\2\u0119"+
-		"\'\3\2\2\2\u011a\u011b\7\"\2\2\u011b)\3\2\2\2\u011c\u011d\7\36\2\2\u011d"+
-		"+\3\2\2\2\u011e\u011f\7>\2\2\u011f-\3\2\2\2\u0120\u0121\5\32\16\2\u0121"+
-		"/\3\2\2\2\u0122\u0123\5\32\16\2\u0123\61\3\2\2\2\u0124\u0125\7>\2\2\u0125"+
-		"\63\3\2\2\2\u0126\u0127\5\32\16\2\u0127\u0128\7\27\2\2\u0128\u0129\5\32"+
-		"\16\2\u0129\u012a\7\30\2\2\u012a\u012b\5\64\33\2\u012b\u0131\3\2\2\2\u012c"+
-		"\u012d\5\32\16\2\u012d\u012e\7\27\2\2\u012e\u012f\5\32\16\2\u012f\u0131"+
-		"\3\2\2\2\u0130\u0126\3\2\2\2\u0130\u012c\3\2\2\2\u0131\65\3\2\2\2\u0132"+
-		"\u0133\t\4\2\2\u0133\67\3\2\2\2\u0134\u0135\t\5\2\2\u01359\3\2\2\2\u0136"+
-		"\u0137\t\6\2\2\u0137;\3\2\2\2\u0138\u0139\5L\'\2\u0139=\3\2\2\2\u013a"+
-		"\u013b\5L\'\2\u013b?\3\2\2\2\u013c\u013d\7>\2\2\u013dA\3\2\2\2\u013e\u0143"+
-		"\5D#\2\u013f\u0140\5D#\2\u0140\u0141\5B\"\2\u0141\u0143\3\2\2\2\u0142"+
-		"\u013e\3\2\2\2\u0142\u013f\3\2\2\2\u0143C\3\2\2\2\u0144\u0148\5H%\2\u0145"+
-		"\u0148\5J&\2\u0146\u0148\5F$\2\u0147\u0144\3\2\2\2\u0147\u0145\3\2\2\2"+
-		"\u0147\u0146\3\2\2\2\u0148E\3\2\2\2\u0149\u014a\7\5\2\2\u014aG\3\2\2\2"+
-		"\u014b\u014c\7\3\2\2\u014cI\3\2\2\2\u014d\u014e\7\4\2\2\u014eK\3\2\2\2"+
-		"\u014f\u0150\7\13\2\2\u0150M\3\2\2\2\rTYiv|\u0092\u00fd\u0112\u0130\u0142"+
-		"\u0147";
+		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\3\2\3\2\3\2\3\3\7\3Q\n\3\f\3\16\3"+
+		"T\13\3\3\4\3\4\5\4X\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6\5\6c\n\6\5"+
+		"\6e\n\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t\7\tp\n\t\f\t\16\ts\13\t\3"+
+		"\n\7\nv\n\n\f\n\16\ny\13\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\3\f\3\f\3\r\3\r\3\r\3\r\3\r\5\r\u008e\n\r\3\16\3\16\3"+
+		"\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3"+
+		"\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3"+
+		"\16\3\16\3\16\3\16\3\16\5\16\u00b3\n\16\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\3\16\5\16\u00bc\n\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5\16\u00d4"+
+		"\n\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\5\16\u00e3\n\16\3\16\3\16\3\16\3\16\3\16\5\16\u00ea\n\16\3\17\3\17\3"+
+		"\20\3\20\3\21\3\21\3\21\5\21\u00f3\n\21\3\21\3\21\5\21\u00f7\n\21\3\21"+
+		"\3\21\3\21\5\21\u00fc\n\21\3\22\3\22\3\23\3\23\3\24\3\24\3\25\3\25\3\26"+
+		"\3\26\3\27\3\27\3\30\3\30\3\31\3\31\3\32\3\32\3\32\3\32\3\32\3\32\3\32"+
+		"\3\32\7\32\u0116\n\32\f\32\16\32\u0119\13\32\3\33\3\33\3\34\3\34\3\35"+
+		"\3\35\3\36\3\36\3\37\3\37\3 \3 \3!\6!\u0128\n!\r!\16!\u0129\3\"\3\"\3"+
+		"\"\5\"\u012f\n\"\3#\3#\3$\3$\3%\3%\3&\3&\3&\2\2\'\2\4\6\b\n\f\16\20\22"+
+		"\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJ\2\7\4\2!!$%\3\2\37 "+
+		"\4\2\32\34)+\3\2,\65\3\2\66<\2\u0133\2L\3\2\2\2\4R\3\2\2\2\6W\3\2\2\2"+
+		"\bY\3\2\2\2\n_\3\2\2\2\ff\3\2\2\2\16j\3\2\2\2\20q\3\2\2\2\22w\3\2\2\2"+
+		"\24z\3\2\2\2\26\u0086\3\2\2\2\30\u008d\3\2\2\2\32\u00e9\3\2\2\2\34\u00eb"+
+		"\3\2\2\2\36\u00ed\3\2\2\2 \u00fb\3\2\2\2\"\u00fd\3\2\2\2$\u00ff\3\2\2"+
+		"\2&\u0101\3\2\2\2(\u0103\3\2\2\2*\u0105\3\2\2\2,\u0107\3\2\2\2.\u0109"+
+		"\3\2\2\2\60\u010b\3\2\2\2\62\u010d\3\2\2\2\64\u011a\3\2\2\2\66\u011c\3"+
+		"\2\2\28\u011e\3\2\2\2:\u0120\3\2\2\2<\u0122\3\2\2\2>\u0124\3\2\2\2@\u0127"+
+		"\3\2\2\2B\u012e\3\2\2\2D\u0130\3\2\2\2F\u0132\3\2\2\2H\u0134\3\2\2\2J"+
+		"\u0136\3\2\2\2LM\5\4\3\2MN\7\2\2\3N\3\3\2\2\2OQ\5\6\4\2PO\3\2\2\2QT\3"+
+		"\2\2\2RP\3\2\2\2RS\3\2\2\2S\5\3\2\2\2TR\3\2\2\2UX\5\24\13\2VX\5\b\5\2"+
+		"WU\3\2\2\2WV\3\2\2\2X\7\3\2\2\2YZ\7D\2\2Z[\7\22\2\2[\\\5\f\7\2\\]\5\n"+
+		"\6\2]^\7E\2\2^\t\3\2\2\2_d\5\32\16\2`b\5\f\7\2ac\5\16\b\2ba\3\2\2\2bc"+
+		"\3\2\2\2ce\3\2\2\2d`\3\2\2\2de\3\2\2\2e\13\3\2\2\2fg\7F\2\2gh\5\20\t\2"+
+		"hi\7G\2\2i\r\3\2\2\2jk\7F\2\2kl\5\22\n\2lm\7G\2\2m\17\3\2\2\2np\5\32\16"+
+		"\2on\3\2\2\2ps\3\2\2\2qo\3\2\2\2qr\3\2\2\2r\21\3\2\2\2sq\3\2\2\2tv\7="+
+		"\2\2ut\3\2\2\2vy\3\2\2\2wu\3\2\2\2wx\3\2\2\2x\23\3\2\2\2yw\3\2\2\2z{\7"+
+		"\23\2\2{|\5> \2|}\7F\2\2}~\5\26\f\2~\177\7G\2\2\177\u0080\7\25\2\2\u0080"+
+		"\u0081\5:\36\2\u0081\u0082\7\26\2\2\u0082\u0083\5<\37\2\u0083\u0084\7"+
+		"\27\2\2\u0084\u0085\5\30\r\2\u0085\25\3\2\2\2\u0086\u0087\7\5\2\2\u0087"+
+		"\27\3\2\2\2\u0088\u008e\7\24\2\2\u0089\u008a\7F\2\2\u008a\u008b\5@!\2"+
+		"\u008b\u008c\7G\2\2\u008c\u008e\3\2\2\2\u008d\u0088\3\2\2\2\u008d\u0089"+
+		"\3\2\2\2\u008e\31\3\2\2\2\u008f\u00ea\5,\27\2\u0090\u0091\5,\27\2\u0091"+
+		"\u0092\7\25\2\2\u0092\u0093\5\32\16\2\u0093\u00ea\3\2\2\2\u0094\u0095"+
+		"\7D\2\2\u0095\u0096\5J&\2\u0096\u0097\5B\"\2\u0097\u0098\7E\2\2\u0098"+
+		"\u00ea\3\2\2\2\u0099\u009a\7D\2\2\u009a\u009b\58\35\2\u009b\u009c\5J&"+
+		"\2\u009c\u009d\5.\30\2\u009d\u009e\5\60\31\2\u009e\u009f\7E\2\2\u009f"+
+		"\u00ea\3\2\2\2\u00a0\u00a1\7D\2\2\u00a1\u00a2\5\"\22\2\u00a2\u00a3\7F"+
+		"\2\2\u00a3\u00a4\5J&\2\u00a4\u00a5\7G\2\2\u00a5\u00a6\5\32\16\2\u00a6"+
+		"\u00a7\7E\2\2\u00a7\u00ea\3\2\2\2\u00a8\u00a9\7D\2\2\u00a9\u00aa\5\64"+
+		"\33\2\u00aa\u00ab\5J&\2\u00ab\u00ac\5.\30\2\u00ac\u00ad\5\60\31\2\u00ad"+
+		"\u00ae\7E\2\2\u00ae\u00ea\3\2\2\2\u00af\u00b0\7D\2\2\u00b0\u00b2\5\66"+
+		"\34\2\u00b1\u00b3\5J&\2\u00b2\u00b1\3\2\2\2\u00b2\u00b3\3\2\2\2\u00b3"+
+		"\u00b4\3\2\2\2\u00b4\u00b5\5.\30\2\u00b5\u00b6\5\60\31\2\u00b6\u00b7\7"+
+		"E\2\2\u00b7\u00ea\3\2\2\2\u00b8\u00b9\7D\2\2\u00b9\u00bb\5$\23\2\u00ba"+
+		"\u00bc\5J&\2\u00bb\u00ba\3\2\2\2\u00bb\u00bc\3\2\2\2\u00bc\u00bd\3\2\2"+
+		"\2\u00bd\u00be\5.\30\2\u00be\u00bf\5\60\31\2\u00bf\u00c0\7E\2\2\u00c0"+
+		"\u00ea\3\2\2\2\u00c1\u00c2\7D\2\2\u00c2\u00c3\5*\26\2\u00c3\u00c4\5J&"+
+		"\2\u00c4\u00c5\5B\"\2\u00c5\u00c6\5\32\16\2\u00c6\u00c7\7E\2\2\u00c7\u00ea"+
+		"\3\2\2\2\u00c8\u00c9\7D\2\2\u00c9\u00ca\5\36\20\2\u00ca\u00cb\5J&\2\u00cb"+
+		"\u00cc\5\32\16\2\u00cc\u00cd\7E\2\2\u00cd\u00ea\3\2\2\2\u00ce\u00cf\7"+
+		"D\2\2\u00cf\u00d0\5\34\17\2\u00d0\u00d1\5J&\2\u00d1\u00d3\5\32\16\2\u00d2"+
+		"\u00d4\5 \21\2\u00d3\u00d2\3\2\2\2\u00d3\u00d4\3\2\2\2\u00d4\u00d5\3\2"+
+		"\2\2\u00d5\u00d6\7E\2\2\u00d6\u00ea\3\2\2\2\u00d7\u00d8\7D\2\2\u00d8\u00d9"+
+		"\5(\25\2\u00d9\u00da\5J&\2\u00da\u00db\5.\30\2\u00db\u00dc\5\60\31\2\u00dc"+
+		"\u00dd\5\32\16\2\u00dd\u00de\7E\2\2\u00de\u00ea\3\2\2\2\u00df\u00e0\7"+
+		"D\2\2\u00e0\u00e2\5&\24\2\u00e1\u00e3\5J&\2\u00e2\u00e1\3\2\2\2\u00e2"+
+		"\u00e3\3\2\2\2\u00e3\u00e4\3\2\2\2\u00e4\u00e5\5\32\16\2\u00e5\u00e6\7"+
+		"E\2\2\u00e6\u00ea\3\2\2\2\u00e7\u00ea\5 \21\2\u00e8\u00ea\5B\"\2\u00e9"+
+		"\u008f\3\2\2\2\u00e9\u0090\3\2\2\2\u00e9\u0094\3\2\2\2\u00e9\u0099\3\2"+
+		"\2\2\u00e9\u00a0\3\2\2\2\u00e9\u00a8\3\2\2\2\u00e9\u00af\3\2\2\2\u00e9"+
+		"\u00b8\3\2\2\2\u00e9\u00c1\3\2\2\2\u00e9\u00c8\3\2\2\2\u00e9\u00ce\3\2"+
+		"\2\2\u00e9\u00d7\3\2\2\2\u00e9\u00df\3\2\2\2\u00e9\u00e7\3\2\2\2\u00e9"+
+		"\u00e8\3\2\2\2\u00ea\33\3\2\2\2\u00eb\u00ec\t\2\2\2\u00ec\35\3\2\2\2\u00ed"+
+		"\u00ee\t\3\2\2\u00ee\37\3\2\2\2\u00ef\u00f2\5,\27\2\u00f0\u00f1\7\25\2"+
+		"\2\u00f1\u00f3\5\32\16\2\u00f2\u00f0\3\2\2\2\u00f2\u00f3\3\2\2\2\u00f3"+
+		"\u00fc\3\2\2\2\u00f4\u00f6\7F\2\2\u00f5\u00f7\5\62\32\2\u00f6\u00f5\3"+
+		"\2\2\2\u00f6\u00f7\3\2\2\2\u00f7\u00f8\3\2\2\2\u00f8\u00f9\7G\2\2\u00f9"+
+		"\u00fa\7(\2\2\u00fa\u00fc\5 \21\2\u00fb\u00ef\3\2\2\2\u00fb\u00f4\3\2"+
+		"\2\2\u00fc!\3\2\2\2\u00fd\u00fe\7\31\2\2\u00fe#\3\2\2\2\u00ff\u0100\7"+
+		"\35\2\2\u0100%\3\2\2\2\u0101\u0102\7#\2\2\u0102\'\3\2\2\2\u0103\u0104"+
+		"\7\"\2\2\u0104)\3\2\2\2\u0105\u0106\7\36\2\2\u0106+\3\2\2\2\u0107\u0108"+
+		"\7=\2\2\u0108-\3\2\2\2\u0109\u010a\5\32\16\2\u010a/\3\2\2\2\u010b\u010c"+
+		"\5\32\16\2\u010c\61\3\2\2\2\u010d\u010e\5\32\16\2\u010e\u010f\7\27\2\2"+
+		"\u010f\u0117\5\32\16\2\u0110\u0111\7\30\2\2\u0111\u0112\5\32\16\2\u0112"+
+		"\u0113\7\27\2\2\u0113\u0114\5\32\16\2\u0114\u0116\3\2\2\2\u0115\u0110"+
+		"\3\2\2\2\u0116\u0119\3\2\2\2\u0117\u0115\3\2\2\2\u0117\u0118\3\2\2\2\u0118"+
+		"\63\3\2\2\2\u0119\u0117\3\2\2\2\u011a\u011b\t\4\2\2\u011b\65\3\2\2\2\u011c"+
+		"\u011d\t\5\2\2\u011d\67\3\2\2\2\u011e\u011f\t\6\2\2\u011f9\3\2\2\2\u0120"+
+		"\u0121\5J&\2\u0121;\3\2\2\2\u0122\u0123\5J&\2\u0123=\3\2\2\2\u0124\u0125"+
+		"\7=\2\2\u0125?\3\2\2\2\u0126\u0128\5B\"\2\u0127\u0126\3\2\2\2\u0128\u0129"+
+		"\3\2\2\2\u0129\u0127\3\2\2\2\u0129\u012a\3\2\2\2\u012aA\3\2\2\2\u012b"+
+		"\u012f\5F$\2\u012c\u012f\5H%\2\u012d\u012f\5D#\2\u012e\u012b\3\2\2\2\u012e"+
+		"\u012c\3\2\2\2\u012e\u012d\3\2\2\2\u012fC\3\2\2\2\u0130\u0131\7\5\2\2"+
+		"\u0131E\3\2\2\2\u0132\u0133\7\3\2\2\u0133G\3\2\2\2\u0134\u0135\7\4\2\2"+
+		"\u0135I\3\2\2\2\u0136\u0137\7\13\2\2\u0137K\3\2\2\2\24RWbdqw\u008d\u00b2"+
+		"\u00bb\u00d3\u00e2\u00e9\u00f2\u00f6\u00fb\u0117\u0129\u012e";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

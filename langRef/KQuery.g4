@@ -7,7 +7,7 @@ kqueryExpression
     ;
 
 queryStatements
-    : (ktranslationUnit)*
+    : ( ktranslationUnit )*
     ;
     
 ktranslationUnit
@@ -20,9 +20,7 @@ queryCommand
     ;
         
 queryExpr 
-    : expression                                #SingletonQueryExpr
-    | expression evalExprList                   #WithEvalExpr
-    | expression evalExprList evalArrayList     #WithEvalExprAndArrayList
+    : expression ( evalExprList evalArrayList? )?
     ;
     
 evalExprList 
@@ -33,8 +31,8 @@ evalArrayList
     : LeftBracket identifierList RightBracket  
     ;
 
-expressionList : (expression)*;
-identifierList : (Identifier)*;
+expressionList : ( expression )*;
+identifierList : ( Identifier )*;
 
 arrayDeclaration
     : Array arrName LeftBracket numArrayElements RightBracket 
@@ -52,22 +50,18 @@ arrayInitializer
     
 expression
     : varName                                                                               #VariableName
-    | namedConstant Colon expression                                                        #NamedAbbreviation
+    | varName Colon expression                                                              #NamedAbbreviation
     | LeftParen widthOrSizeExpr number RightParen                                           #SizeQuery
     | LeftParen arithmeticExpr widthOrSizeExpr leftExpr rightExpr RightParen                #ArithExpr
     | LeftParen notExpr LeftBracket widthOrSizeExpr RightBracket expression RightParen      #NotExprWidth
     | LeftParen bitwiseExpr widthOrSizeExpr leftExpr rightExpr RightParen                   #BitwExprWidth
-    | LeftParen comparisonExpr widthOrSizeExpr leftExpr rightExpr RightParen                #CompExprWidth
-    | LeftParen comparisonExpr leftExpr rightExpr RightParen                                #CompExpr
-    | LeftParen concatExpr widthOrSizeExpr leftExpr rightExpr RightParen                    #ConcatExprWidth
-    | LeftParen concatExpr leftExpr rightExpr RightParen                                    #ConcatExprNW   
+    | LeftParen comparisonExpr (widthOrSizeExpr)? leftExpr rightExpr RightParen             #CompExprWidth
+    | LeftParen concatExpr (widthOrSizeExpr)? leftExpr rightExpr RightParen                 #ConcatExprWidth
     | LeftParen arrExtractExpr widthOrSizeExpr number expression RightParen                 #ArrExtractExprWidth
     | LeftParen bitExtractExpr widthOrSizeExpr expression RightParen                        #BitExtractExprWidth
-    | LeftParen genericBitRead widthOrSizeExpr expression version RightParen                #ReadExpresssionVersioned
+    | LeftParen genericBitRead widthOrSizeExpr expression (version)? RightParen             #ReadExpresssionVersioned
     | LeftParen selectExpr widthOrSizeExpr leftExpr rightExpr expression RightParen         #SelectExprWidth
-    | LeftParen exprNegation widthOrSizeExpr expression RightParen                          #NegationExprWidth
-    | LeftParen exprNegation expression RightParen                                          #NegetionExpr
-    | LeftParen genericBitRead widthOrSizeExpr expression RightParen                        #ReadExpr
+    | LeftParen exprNegation (widthOrSizeExpr)? expression RightParen                       #NegationExprWidth
     | version                                                                               #VersionExpr
     | number                                                                                #Singleton
     ;
@@ -84,10 +78,8 @@ bitExtractExpr
     ;
     
 version
-    : varName                                               #VersionVariableName
-    | namedConstant Colon expression                        #VersionedNamedAbbreviation
-    | LeftBracket updateList RightBracket ATR version       #UpdationList
-    | LeftBracket RightBracket ATR version                  #NoUpdateList
+    : varName ( Colon expression )?                         #VersionVariableName
+    | LeftBracket (updateList)? RightBracket ATR version    #UpdationList
     ;
     
 notExpr
@@ -122,13 +114,8 @@ rightExpr
     : expression
     ;
     
-namedConstant
-    : Identifier
-    ;
-    
 updateList 
-    : expression Equal expression COMMA updateList
-    | expression Equal expression
+    : expression Equal expression ( COMMA expression Equal expression )*
     ;
 
 bitwiseExpr 
@@ -168,8 +155,7 @@ rangeLimit : widthOrSizeExpr ;
 arrName : Identifier ;
 
 numberList
-    : number
-    | number numberList
+    : number+
     ;
 
 number 
@@ -211,7 +197,7 @@ HexConstant
     ;
 
 FloatingPointType 
-    : FP DIGIT ((.).*?)?  
+    : FP DIGIT+([.].*?)?  
     ;
     
 IntegerType 
@@ -255,7 +241,6 @@ READMSB: 'ReadMSB';
 PLUS : '+';
 MINUS : '-';
 ATR : '@';
-FP : 'fp';
 BITWISEAND : 'And';
 BITWISEOR : 'Or';
 BITWISEXOR : 'Xor';
@@ -302,6 +287,7 @@ Identifier
     ;
     
 INT : 'i';
+FP : 'fp';
 
 Whitespace
     :   [ \t]+ -> skip
@@ -315,7 +301,7 @@ Newline
     ;
 
 BlockComment
-    : '/*' .*? '*/' -> skip
+    : '#' .*? '#' -> skip
     ;
 
 LineComment

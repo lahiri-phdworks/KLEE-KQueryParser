@@ -47,41 +47,15 @@ public interface KQueryListener extends ParseTreeListener {
 	 */
 	void exitQueryCommand(KQueryParser.QueryCommandContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code SingletonQueryExpr}
-	 * labeled alternative in {@link KQueryParser#queryExpr}.
+	 * Enter a parse tree produced by {@link KQueryParser#queryExpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterSingletonQueryExpr(KQueryParser.SingletonQueryExprContext ctx);
+	void enterQueryExpr(KQueryParser.QueryExprContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code SingletonQueryExpr}
-	 * labeled alternative in {@link KQueryParser#queryExpr}.
+	 * Exit a parse tree produced by {@link KQueryParser#queryExpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitSingletonQueryExpr(KQueryParser.SingletonQueryExprContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code WithEvalExpr}
-	 * labeled alternative in {@link KQueryParser#queryExpr}.
-	 * @param ctx the parse tree
-	 */
-	void enterWithEvalExpr(KQueryParser.WithEvalExprContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code WithEvalExpr}
-	 * labeled alternative in {@link KQueryParser#queryExpr}.
-	 * @param ctx the parse tree
-	 */
-	void exitWithEvalExpr(KQueryParser.WithEvalExprContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code WithEvalExprAndArrayList}
-	 * labeled alternative in {@link KQueryParser#queryExpr}.
-	 * @param ctx the parse tree
-	 */
-	void enterWithEvalExprAndArrayList(KQueryParser.WithEvalExprAndArrayListContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code WithEvalExprAndArrayList}
-	 * labeled alternative in {@link KQueryParser#queryExpr}.
-	 * @param ctx the parse tree
-	 */
-	void exitWithEvalExprAndArrayList(KQueryParser.WithEvalExprAndArrayListContext ctx);
+	void exitQueryExpr(KQueryParser.QueryExprContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link KQueryParser#evalExprList}.
 	 * @param ctx the parse tree
@@ -237,18 +211,6 @@ public interface KQueryListener extends ParseTreeListener {
 	 */
 	void exitCompExprWidth(KQueryParser.CompExprWidthContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code CompExpr}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterCompExpr(KQueryParser.CompExprContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code CompExpr}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitCompExpr(KQueryParser.CompExprContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code ConcatExprWidth}
 	 * labeled alternative in {@link KQueryParser#expression}.
 	 * @param ctx the parse tree
@@ -260,18 +222,6 @@ public interface KQueryListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConcatExprWidth(KQueryParser.ConcatExprWidthContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ConcatExprNW}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterConcatExprNW(KQueryParser.ConcatExprNWContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ConcatExprNW}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitConcatExprNW(KQueryParser.ConcatExprNWContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ArrExtractExprWidth}
 	 * labeled alternative in {@link KQueryParser#expression}.
@@ -333,30 +283,6 @@ public interface KQueryListener extends ParseTreeListener {
 	 */
 	void exitNegationExprWidth(KQueryParser.NegationExprWidthContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code NegetionExpr}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterNegetionExpr(KQueryParser.NegetionExprContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code NegetionExpr}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitNegetionExpr(KQueryParser.NegetionExprContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ReadExpr}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterReadExpr(KQueryParser.ReadExprContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ReadExpr}
-	 * labeled alternative in {@link KQueryParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitReadExpr(KQueryParser.ReadExprContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code VersionExpr}
 	 * labeled alternative in {@link KQueryParser#expression}.
 	 * @param ctx the parse tree
@@ -413,18 +339,6 @@ public interface KQueryListener extends ParseTreeListener {
 	 */
 	void exitVersionVariableName(KQueryParser.VersionVariableNameContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code VersionedNamedAbbreviation}
-	 * labeled alternative in {@link KQueryParser#version}.
-	 * @param ctx the parse tree
-	 */
-	void enterVersionedNamedAbbreviation(KQueryParser.VersionedNamedAbbreviationContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code VersionedNamedAbbreviation}
-	 * labeled alternative in {@link KQueryParser#version}.
-	 * @param ctx the parse tree
-	 */
-	void exitVersionedNamedAbbreviation(KQueryParser.VersionedNamedAbbreviationContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code UpdationList}
 	 * labeled alternative in {@link KQueryParser#version}.
 	 * @param ctx the parse tree
@@ -436,18 +350,6 @@ public interface KQueryListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitUpdationList(KQueryParser.UpdationListContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code NoUpdateList}
-	 * labeled alternative in {@link KQueryParser#version}.
-	 * @param ctx the parse tree
-	 */
-	void enterNoUpdateList(KQueryParser.NoUpdateListContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code NoUpdateList}
-	 * labeled alternative in {@link KQueryParser#version}.
-	 * @param ctx the parse tree
-	 */
-	void exitNoUpdateList(KQueryParser.NoUpdateListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link KQueryParser#notExpr}.
 	 * @param ctx the parse tree
@@ -528,16 +430,6 @@ public interface KQueryListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRightExpr(KQueryParser.RightExprContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KQueryParser#namedConstant}.
-	 * @param ctx the parse tree
-	 */
-	void enterNamedConstant(KQueryParser.NamedConstantContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KQueryParser#namedConstant}.
-	 * @param ctx the parse tree
-	 */
-	void exitNamedConstant(KQueryParser.NamedConstantContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link KQueryParser#updateList}.
 	 * @param ctx the parse tree
